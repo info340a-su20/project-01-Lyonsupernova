@@ -1,1 +1,43 @@
 /* main */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: aliceblue;
+}
+
+.landing-section {
+    height: 90vh;
+}
+.landing-content {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.intro-header {
+    margin-bottom: 50px;
+    text-transform: capitalize;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #504040;
+    font-size: 40px;
+}
+
+
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: transparent;
+    margin-right: 30px;
+}
+.search-field {
+    width: 300px;
+}
+.search-field:focus {
+    outline: none;
+    border-bottom: 2px;
+}
+.submit-button:focus {
+    outline: none;
+    border-bottom-width: 2px;
+}
