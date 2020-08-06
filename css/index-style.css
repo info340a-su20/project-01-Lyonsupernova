@@ -1,9 +1,23 @@
 main section{
-    margin-left: 10rem;
+    margin-left: 5rem;
+    margin-top: 5rem;
 }
 
-card > img{
-  max-width: 200px;
-  height:auto;
+.card > img{
+  width: 200px;
+  height: 150px;
 }
 
+.user-defined-pool{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-defined-pool-sm-1, .user-defined-pool-sm-2, .user-defined-pool-sm-3{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+.text{
+    padding-left: 10rem;
+}
