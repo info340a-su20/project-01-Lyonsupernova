@@ -1,0 +1,9 @@
+main section{
+    margin-left: 10rem;
+}
+
+card > img{
+  max-width: 200px;
+  height:auto;
+}
+
