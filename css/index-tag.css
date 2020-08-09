@@ -43,6 +43,7 @@ main {
 
 /* the card image you can adjust the display size here */
 .card img {
+    /* display: block; */
     width: 210px;
     height: 150px;
     margin-bottom: 0.5rem;
@@ -52,6 +53,7 @@ main {
 .user-defined-pool {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 }
 
 /* small flex pool add with bottom margin  */
@@ -69,6 +71,9 @@ main {
 /* card view add with border */
 .card {
     border: 2px solid rgb(102, 62, 62);
+    margin-right: 20px;
+    width: 214px;
+    height: 200px;
 }
 
 /* the header with font element */
