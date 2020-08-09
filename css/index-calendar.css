@@ -16,7 +16,7 @@
 .side-nav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     color: #cfcfcf;
     display: block;
 }
@@ -29,13 +29,13 @@
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .side-nav {padding-top: 15px;}
-    .side-nav a {font-size: 18px;}
+    .side-nav a {font-size: 16px;}
 }
 
 
 /* body of calendar*/
 main section {
-    margin-left: 15rem; /* adjust the content based on navigation bar */
+    margin-left: 8rem; /* adjust the content based on navigation bar */
     margin-top: 2.5rem;
 }
 
@@ -116,7 +116,7 @@ main section {
 /* the event name like cse351! */
 .content {
     align-self: center;
-    margin-left: 35px;
+    margin-left: 20px;
 }
 
 /* the big flex pool, put all small flex swimmers inside! */
@@ -131,4 +131,22 @@ main section {
     justify-content: flex-start;
     flex-direction: column;
     margin-bottom: 2rem;
+}
+
+.welcome-title {
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 150%;
+    margin-bottom: 20px;
+    margin-left: 1rem;
+}
+.welcome-title strong {
+    font-weight: 500;
+}
+.welcome-person {
+    font-size: 26px;
+}
+.subtitle {
+    font-size: 22px;
+    margin-bottom: 15px;
 }
