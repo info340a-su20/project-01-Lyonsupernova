@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Landing Page</title>
+  <meta name="author" content="Cassie Mao, Lyons Lu, Wayne Zhang">
+  <meta name="description" content="landing page for meetyou, a website to organize zoom meetings">
   <!-- normalize.css for cross-browser stuff -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Boostrap 4 CSS -->
@@ -36,20 +38,23 @@
     <div class="splitdiv" id="leftdiv">
       <div id="leftdivcard">
         <h1 style="padding-top:20px;text-align:center">Sign In</h1>
+        <form role="user information input form">
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
+        </form>
           <div style="text-align:center">
-            <button id="leftbutton" class="ripple2">Login</button>
+            <button aria-hidden="true" id="leftbutton" class="ripple2">Login</button>
+            <button aria-hidden="true" id="spybutton" class="ripple2">Signup</button>
           </div>
       </div>
     </div>
       
     <div class="splitdiv" id="rightdiv">
       <div id="rightdivcard">
-        <h1 class="mobile" style="padding-top:20px;text-align:center;color:white">New here ?</h1>
-        <p class="mobile" style="color:white;text-align:center">Discover a more conveninent way to meet!</p>
+        <h1 style="padding-top:20px;text-align:center;color:white">New here ?</h1>
+        <p style="color:white;text-align:center">Discover a more conveninent way to meet!</p>
         <div style="text-align:center">
-            <button id="rightbutton" class="ripple">Sign Up</button>
+            <button aria-hidden="true" id="rightbutton" class="ripple">Sign Up</button>
         </div>
       </div>
     </div>

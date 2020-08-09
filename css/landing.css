@@ -25,6 +25,8 @@ body, html {
 }
 
 #leftdivcard{
+  position: relative;
+  top: -10rem;
   margin:0 auto;
   width:50%;
   background-color:white;
@@ -50,6 +52,8 @@ body, html {
 }
 
 #rightdivcard{
+  position: relative;
+  top: -10rem;
   margin: 0 auto;
   width:50%;
   margin-top: 50vh;
@@ -177,7 +181,6 @@ input {
 
 
 nav {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -227,6 +230,10 @@ li {
     border-right: 5px solid #B8D8D8;
 }
 
+#spybutton{
+  display: none;
+}
+
 /* phone-view like galaxy from 0px - 360px*/
 /* ipad view */
 
@@ -245,12 +252,14 @@ li {
     float:none;
   }
 
-  .mobile{
-    display:none;
+  #rightdiv{
+    display: none;
   }
-  #rightbutton{
-    position: relative;
-    top: -32rem;
-    left: 15em;
+  #spybutton{
+    margin-left: 1rem;
+    display: inline;
+    border-radius:5px;
+    color:#FAFAFA;
+    background-color:#B8D8D8;
   }
 }
