@@ -79,3 +79,6 @@ h4 {
 .welcome-title strong {
     font-weight: 500;
 }
+.welcome-person {
+    font-size: 26px;
+}
