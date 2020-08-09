@@ -12,6 +12,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
   <!-- load font-awesome library -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -20,10 +21,10 @@
     <nav class="navigation">
 
       <ul class="nav-menu d-flex">
-        <li><a href="#logo-text"><img class="logo mr-auto p-2" src="img/w.jpg" alt="logo"></a></img></li>
-        <li class="text mr-auto p-2"><a href="#logo-text">Landing-page</a></li>
-        <li class="nav-link p-2"><a href="#login" class="border-r">Log in</a></li>
-        <li class="nav-link p-2 ml-5"><a href="#signup">Sign up</a></li>
+        <li><a href="#logo-text"><img class="logo mr-auto p-2" src="img/meetyou.jpeg" alt="logo"></a></img></li>
+        <li class="text mr-auto p-2"><a href="#logo-text">MeetYou</a></li>
+        <li class="nav-link p-2"><a href="#aboutus" class="border-r">About Us</a></li>
+        <li class="nav-link p-2 ml-5"><a href="#help">Help Center</a></li>
 
       </ul>
 
@@ -32,22 +33,29 @@
   </header>
 
   <main>
-    <section class="landing-section text-center">
-      <div class="container">
-        <div class="landing-content">
-
-          <h1 class="intro-header">
-            Save on delivery with husky pride
-          </h1>
-          <form class="form">
-            <input class="search-field" type="search" placeholder="What place are you thinking?" name="search">
-            <input class="submit-button" type="submit" value="Submit">
-          </form>
-
+    <div style="height:100%;width:100%;display:inline-block">  
+    <div class="splitdiv" id="leftdiv">
+      <div id="leftdivcard">
+        <h1 style="padding-top:20px;text-align:center">Sign In</h1>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <div style="text-align:center">
+            <button id="leftbutton" class="ripple2">Login</button>
+          </div>
+      </div>
+    </div>
+      
+    <div class="splitdiv" id="rightdiv">
+      <div id="rightdivcard">
+        <h1 style="padding-top:20px;text-align:center;color:white">New here ?</h1>
+        <p style="color:white;text-align:center">Discover a more conveninent way to meet!</p>
+        <div style="text-align:center">
+            <button id="rightbutton" class="ripple">Sign Up</button>
         </div>
       </div>
-    </section>
-
+    </div>
+      
+    </div>
   </main>
 
 </body>
