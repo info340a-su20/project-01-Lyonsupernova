@@ -226,4 +226,31 @@ li {
     padding-right: 6rem;
     border-right: 5px solid #B8D8D8;
 }
+
+/* phone-view like galaxy from 0px - 360px*/
+/* ipad view */
+
+@media (min-width: 0px) and (max-width: 767px){
+  /* only display sign in*/
+
+  /* */
+  .splitdiv{
+    height: 100%;
+    width: 100%;
+  }
   
+  /* This part contains all of the left side of the screen */
+  /* ----------------------------------------- */
+  #leftdiv{
+    float:none;
+  }
+
+  .mobile{
+    display:none;
+  }
+  #rightbutton{
+    position: relative;
+    top: -32rem;
+    left: 15em;
+  }
+}
