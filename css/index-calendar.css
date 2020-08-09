@@ -1,1 +1,86 @@
-124
+main section {
+    margin-left: 15rem;
+    margin-top: 2.5rem;
+}
+
+.card img {
+    width: 210px;
+    height: 150px;
+}
+.card {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+.tim, .cse351, .info340, .info340-group, .math381, .sam, .marc, .dogpaws, .lenora {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 150px;
+    background-size: 210px 150px;
+    background-repeat: no-repeat;
+    border: solid pink 2px;
+}
+
+.tim {
+    background-image: url(../img/tim.png);
+}
+
+.cse351 {
+    background-image: url(../img/cse351.jpg);
+}
+
+.info340 {
+    background-image: url(../img/info340.png);
+}
+
+.info340-group {
+    background-image: url(../img/Info340-group.jpg);
+}
+
+.math381 {
+    background-image: url(../img/math381.png);
+}
+
+.sam {
+    background-image: url(../img/sam.png);
+}
+
+.marc {
+    background-image: url(../img/marc.png);
+}
+
+.dogpaws {
+    background-image: url(../img/dogpaws.jpeg);
+}
+
+.lenora {
+    background-image: url(../img/7lenora.png);
+}
+
+.time {
+    width: 210px;
+    height: 30px;
+    background-color: white;
+    border: solid pink 2px;
+    text-align: center;
+}
+
+.content {
+    align-self: center;
+    margin-left: 35px;
+}
+
+.user-defined-pool {
+    display: flex;
+    flex-direction: column;
+}
+.user-defined-pool-sm-1, .user-defined-pool-sm-2, .user-defined-pool-sm-3 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
