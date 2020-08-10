@@ -13,6 +13,7 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/landing.css">
+  <!-- load font-awesome library -->
 </head>
 
 <body>
@@ -21,7 +22,9 @@
 
       <ul class="nav-menu d-flex">
         <li><a href="#logo-text"><img class="logo mr-auto p-2" src="img/meetyou.jpg" alt="logo"></a></img></li>
-      
+        <li class="text mr-auto p-2"><a href="#logo-text">MeetYou</a></li>
+        <li class="nav-link p-2"><a href="#aboutus" class="border-r">About Us</a></li>
+        <li class="nav-link p-2 ml-5"><a href="#help">Help Center</a></li>
 
       </ul>
 
@@ -29,7 +32,35 @@
 
   </header>
 
- 
+  <main>
+    <div style="height:100%;width:100%;display:inline-block">  
+    <div class="splitdiv" id="leftdiv">
+      <div id="leftdivcard">
+        <h1 style="padding-top:20px;text-align:center">Sign In</h1>
+        <form role="user information input form">
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+        </form>
+          <div style="text-align:center">
+            <button aria-hidden="true" id="leftbutton" class="ripple2">Login</button>
+            <button aria-hidden="true" id="spybutton" class="ripple2">Signup</button>
+          </div>
+      </div>
+    </div>
+      
+    <div class="splitdiv" id="rightdiv">
+      <div id="rightdivcard">
+        <h1 style="padding-top:20px;text-align:center;color:white">New here ?</h1>
+        <p style="color:white;text-align:center">Discover a more conveninent way to meet!</p>
+        <div style="text-align:center">
+            <button aria-hidden="true" id="rightbutton" class="ripple">Sign Up</button>
+        </div>
+      </div>
+    </div>
+      
+    </div>
+  </main>
+
 </body>
 
 </html>
