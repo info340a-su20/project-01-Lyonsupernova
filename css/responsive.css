@@ -1,3 +1,4 @@
+
 /* Navbar */
 /* The sidebar menu */
 .side-nav {
@@ -43,7 +44,9 @@ main {
 }
 
 /* the background color */
-
+body{
+    background-color: #B8D8D8;
+}
 
 /* the font for content*/
 .section-title, .side-nav a, .card-title{
@@ -71,7 +74,7 @@ h4 {
 }
 .welcome-title .welcome-person {
     font-size: 26px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: lobster;
 }
 
 .section-title {
