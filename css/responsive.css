@@ -54,7 +54,7 @@ body{
 
 /* the font for content*/
 .section-title, .side-nav a, .card-title{
-    font-size: 32px;
+    font-size: 28px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
