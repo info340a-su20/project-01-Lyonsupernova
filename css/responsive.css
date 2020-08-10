@@ -34,8 +34,12 @@
 @media screen and (max-width: 450px) {
     .side-nav {padding-top: 20px;}
     .side-nav a {font-size: 14px;}
+    img{display:none;}
+    .card .card-title{text-align: center;margin-top: 5rem; background-image: url(../)}
 }
   
+
+
 /* Main Content */
 main {
     margin-left: 10rem;
@@ -74,7 +78,7 @@ h4 {
 }
 .welcome-title .welcome-person {
     font-size: 26px;
-    font-family: lobster;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .section-title {
