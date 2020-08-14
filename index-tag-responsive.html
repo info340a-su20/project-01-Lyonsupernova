@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="author" content="Cassie Mao, Lyons Lu, Wayne Zhang">
     <meta name="description" content="main page for meetyou, a view to display different tags, like  lectures...">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Main Page</title>
+
     <!-- normalize.css for cross-browser stuff -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Boostrap 4 CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- load font-awesome library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- JS for sideNav -->
     <!-- <script src="js/nav.js"></script> -->
+    <!-- JS for card view -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script defer src="js/responsive.js"></script>
 </head>
 
 <body>
@@ -34,64 +35,200 @@
     <main id="main">
         <section class="main-content">
             <div class="container">
-
                 <div class="row welcome">
                     <h1 class="welcome-title">
-                        <strong>August</strong> 10, 2020 &nbsp;&nbsp; <a class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</a>
+                        <strong>August</strong> 10, 2020 &nbsp;&nbsp; <a
+                            class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</a>
                     </h1>
                 </div>
 
                 <div class="row title-row">
                     <h2 class="section-title">Lecture</h2>
                 </div>
-                <div class="row content-row text-center">
+                <div class="row">
+                    <!-- INFO340 card-->
                     <div class="card">
-                        <img src="img/info340.png" alt="Info340 course page">
-                        <h3 class="card-title">Info 340</h3>
+                        <div class="modal" id="modal-info340">
+                            <div class="modal-header">
+                                <div class="title">Info340</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host: Marc Schmalz</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/2154191712">https://washington.zoom.us/j/2154191712</a>
+                                </div>
+                                <div>To do List: Problem set + final project</div>
+                            </div>
+                        </div>
+                        <div id="overlay"></div>
+                        <img data-modal-target="#modal-info340" src="img/info340.png" alt="Info340 course page">
+                        <h3 class="card-title" data-modal-target="#modal-info340">Info 340</h3>
                     </div>
+
+
+                    <!-- CSE351 card-->
                     <div class="card">
-                        <img src="img/cse351.jpg" alt="Cse351 course page">
-                        <h3 class="card-title">CSE 351</h3>
+                        <div class="modal" id="modal-cse351">
+                            <div class="modal-header">
+                                <div class="title">CSE351</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host: Porter Jones</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/92352902579">https://washington.zoom.us/j/92352902579</a>
+                                </div>
+                                <div>To do List: Lab 5</div>
+                            </div>
+                        </div>
+                        <img data-modal-target="#modal-cse351" src="img/cse351.jpg" alt="Cse351 course page">
+                        <h3 class="card-title" data-modal-target="#modal-cse351">CSE 351</h3>
                     </div>
+
+                    <!-- Math381-->
                     <div class="card">
-                        <img src="img/math381.png" alt="Math381 course page">
-                        <h3 class="card-title">Math 381</h3>
+                        <div class="modal" id="modal-math381">
+                            <div class="modal-header">
+                                <div class="title">Math381</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host: Stark Ledbetter</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/7196363574">https://washington.zoom.us/j/7196363574</a>
+                                </div>
+                                <div>To do List: Homework 8 & presentation</div>
+                            </div>
+                        </div>
+                        <img data-modal-target="#modal-math381" src="img/math381.png" alt="Math381 course page">
+                        <h3 data-modal-target="#modal-math381" class="card-title">Math 381</h3>
                     </div>
                 </div>
 
-                <div class="row title-row">
+                <div class="row">
                     <h2 class="section-title">Office Hour</h2>
                 </div>
-                <div class="row content-row text-center ">
+                <div class="row">
+
+                    <!-- sam office hour-->
                     <div class="card">
-                        <img src="img/sam.png" alt="Sam's office hour">
-                        <h3 class="card-title">Sam's Office Hour</h3>
+                        <div class="modal" id="modal-sam">
+                            <div class="modal-header">
+                                <div class="title">Sam's Office Hour</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host: Sam Wolfson</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/91461269257">https://washington.zoom.us/j/91461269257</a>
+                                </div>
+                                <div>To do List: Read chapter 5</div>
+                            </div>
+                        </div>
+                        <img data-modal-target="#modal-sam" src="img/sam.png" alt="Sam's office hour">
+                        <h3 data-modal-target="#modal-sam" class="card-title">Sam's Office Hour</h3>
                     </div>
+
+
+                    <!-- Tim's office hour-->
                     <div class="card">
-                        <img src="img/tim.png" alt="Tim's office hour">
-                        <h3 class="card-title">Meet with Tim!</h3>
+                        <div class="modal" id="modal-tim">
+                            <div class="modal-header">
+                                <div class="title">Tim's Office Hour</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host: Tim Mandzyuk</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/97919961602">https://washington.zoom.us/j/97919961602</a>
+                                </div>
+                                <div>To do List: Lab4 reflection halfway done!</div>
+                            </div>
+                        </div>
+                        <img data-modal-target="#modal-tim" src="img/tim.png" alt="Tim's office hour">
+                        <h3 data-modal-target="#modal-tim" class="card-title">Meet with Tim!</h3>
                     </div>
+
+                    <!-- Marc's office hour -->
                     <div class="card">
-                        <img src="img/marc.png" alt="Marc's office hour">
-                        <h3 class="card-title">We love Marc :)</h3>
+                        <div class="modal" id="modal-marc">
+                            <div class="modal-header">
+                                <div class="title">Marc's Office Hour</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host:
+                                    Marc Schmalz</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/2154191712">https://washington.zoom.us/j/2154191712</a>
+                                </div>
+                                <div>To do List: static mockup how to improve</div>
+                            </div>
+                        </div>
+                        <img data-modal-target="#modal-marc" src="img/marc.png" alt="Marc's office hour">
+                        <h3 data-modal-target="#modal-marc" class="card-title">We love Marc :)</h3>
                     </div>
                 </div>
 
-                <div class="row title-row">
+                <div class="row">
                     <h2 class="section-title">Group Meeting</h2>
                 </div>
-                <div class="row content-row text-center">
+                <div class="row">
+                    <!-- dogpaws meeting-->
                     <div class="card">
-                        <img src="img/dogpaws.jpeg" alt="Dogpaws meeting">
-                        <h3 class="card-title">D.O.G.P.A.W.S Weekly Meeting</h3>
+                        <div class="modal" id="modal-dog">
+                            <div class="modal-header">
+                                <div class="title">D.O.G.P.A.W.S Weekly Meeting</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host:
+                                    Sam Wang</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/99317325450">https://washington.zoom.us/j/99317325450</a>
+                                </div>
+                                <div>To do List: SQL data input</div>
+                            </div>
+                        </div>
+                        <img data-modal-target="#modal-dog" src="img/dogpaws.jpeg" alt="Dogpaws meeting">
+                        <h3 data-modal-target="#modal-dog" class="card-title">D.O.G.P.A.W.S Weekly Meeting</h3>
                     </div>
+                    <!-- 7 lenora meeting-->
                     <div class="card">
-                        <img src="img/7lenora.png" alt="7lenora meeting">
-                        <h3 class="card-title">7 Lenora's</h3>
+                        <div class="modal" id="modal-7L">
+                            <div class="modal-header">
+                                <div class="title">7Lenora meeting</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host: Dio Brando</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/99317325450">https://washington.zoom.us/j/99317325450</a>
+                                </div>
+                                <div>To do List: the world!</div>
+                            </div>
+                        </div>
+                        <img data-modal-target="#modal-7L" src="img/7lenora.png" alt="7lenora meeting">
+                        <h3 data-modal-target="#modal-7L" class="card-title">7 Lenora's</h3>
                     </div>
+
                     <div class="card">
-                        <img src="img/Info340-group.jpg" alt="Info340 meeting">
-                        <h3 class="card-title">Info 340 Group Meeting</h3>
+                        <div class="modal" id="modal-lyons">
+                            <div class="modal-header">
+                                <div class="title">Info 340 Group Meeting</div>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Host: Lyons Lu</div>
+                                <div> Zoom Link: <a
+                                        href="https://washington.zoom.us/j/92188124483">https://washington.zoom.us/j/92188124483</a>
+                                </div>
+                                <div>To do List: Final Project Let's go!</div>
+                            </div>
+                        </div>
+                        <img data-modal-target="#modal-lyons" src="img/Info340-group.jpg" alt="Info340 meeting">
+                        <h3 data-modal-target="#modal-lyons" class="card-title">Info 340 Group Meeting</h3>
                     </div>
                 </div>
 
