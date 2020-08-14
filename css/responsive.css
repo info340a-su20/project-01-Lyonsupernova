@@ -200,7 +200,7 @@ h1, h2, h3, h4 {
   padding: 10px 15px;
 }
 
-#overlay {
+.overlay {
   position: fixed;
   opacity: 0;
   transition: 200ms ease-in-out;
@@ -212,7 +212,8 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 
-#overlay.active {
+.overlay.active {
   opacity: 1;
+
   pointer-events: all;
 }
