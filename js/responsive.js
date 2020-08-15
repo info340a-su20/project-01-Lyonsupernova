@@ -14,23 +14,23 @@ openModalButtons.forEach(button => {
 overlays.forEach(overlay => {
   overlay.addEventListener('click', () => {
     const modals = document.querySelector('.modal.active')
-      closeModal(modals);
+    closeModal(modals);
   })
 })
 
 
 
-  function openModal(modal) {
-    if (modal == null) return
-    modal.classList.add('active')
-    modal.nextElementSibling.classList.add('active')
-  }
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  modal.nextElementSibling.classList.add('active')
+}
 
-  function closeModal(modal) {
-    if (modal == null) return
-    modal.classList.remove('active')
-    modal.nextElementSibling.classList.remove('active')
-  }
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  modal.nextElementSibling.classList.remove('active')
+}
 
 
 // delete a card
@@ -40,7 +40,6 @@ deleteButtons.forEach(button => {
     let rowElem = button.closest(".row");
     let cardNestedElem = button.closest('.card');
     rowElem.removeChild(cardNestedElem);
-  
   })
 })
 
@@ -48,7 +47,7 @@ deleteButtons.forEach(button => {
 // add a new card from the user input
 
 // select all of the input get values
-document.querySelectorAll()
+
 
 
 // build card 
@@ -56,20 +55,38 @@ document.querySelectorAll()
 
 
 // first select the button submit add event listener and create a card
-const submitButtons = document.querySelector(".submit-button");
-submitButtons.forEach(button => {
-  let rowElem = button.closest(".row");
-  let cardElem = document.createElement('div');
-  cardElem.classList.add('card'); // add card element
-  let imgElem = document.createElement('img'); // create image element
-  imgElem.alt = "test"  // pass fake value to get test
-  imgElem.src = "img/info.png";
-  let h3Elem = document.createElement('h3');
-  h3Elem.innerText = "test";
-  cardElem.appendChild(imgElem); // add img element into card element
-  cardElem.appendChild(h3Elem); // add h3 element into card element 
-  rowElem.appendChild(cardElem); // add card into the row
-  // <img data-modal-target="#modal-info340" src="img/info340.png" alt="Info340 course page">
-     //                   <h3 class="card-title" data-modal-target="#modal-info340">Info 340</h3>
+const submitButtons = document.querySelectorAll(".submit");
 
+
+submitButtons.forEach (element => {
+  element.addEventListener("click", insert, false);
 })
+  /*submitButtons[1].addEventListener('click', insert);
+  submitButtons[2].addEventListener('click', insert);*/
+  let j = 10;
+function insert(event) {
+  let rowElem = event.target.closest(".row");
+  let cardElem = document.querySelector('.card').cloneNode(true);
+  cardElem.id = "card-new";
+  let eventNameInput = document.getElementById('event-name').value;
+  let hostNameInput = document.getElementById('host-name').value;
+  let zoomLinkInput = document.getElementById('zoom-link').value;
+  let toDoListInput = document.getElementById('to-do-list').value;
+ 
+
+
+  let addButton = document.querySelector('#' + rowElem.id + ' .add-button');
+  rowElem.insertBefore(cardElem, addButton);
+  document.querySelector("#card-new .card-title").textContent = eventNameInput;
+  document.querySelector("#card-new .card-title").textContent = hostNameInput;
+  document.querySelector("#card-new .card-title").textContent = zoomLinkInput;
+  document.querySelector("#card-new .card-title").textContent = toDoListInput;
+  let modalName =  'modal-' + j;
+  j += 1;
+  document.querySelector("#card-new .modal").id = modalName;
+  document.querySelector("#card-new img").dataset.target = modalName;
+  document.querySelector("#card-new h3").dataset.target = modalName;
+}
+
+
+

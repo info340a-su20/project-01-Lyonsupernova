@@ -45,7 +45,7 @@
                 <div class="row">
                     <h2 class="section-title">Lecture</h2>
                 </div>
-                <div class="row">
+                <div class="row" id="row-1">
                     <!-- INFO340 card-->
                     <div class="card">
                         <div class="modal" id="modal-info340">
@@ -106,36 +106,34 @@
                         <img data-modal-target="#modal-math381" src="img/math381.png" alt="Math381 course page">
                         <h3 data-modal-target="#modal-math381" class="card-title">Math 381</h3>
                     </div>
-                    <button data-modal-target="#modal">+</button>
-                    <div class="modal" id="modal">
+                    <button class="add-button" data-modal-target="#modal-lecture-button">+</button>
+                    <div class="modal" id="modal-lecture-button">
                         <div class="modal-header">
                             <div class="title">Add a new event?</div>
                         </div>
                         <div class="modal-body">
-                            <form class="col-1-form">
-                                <div>
-                                    <label for="event-name">Event Name:</label>
-                                    <input placeHolder="Info340" id="event-name" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="host-name">Host Name:</label>
-                                    <input placeHolder="Marc Schmalz" id="event-name" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="zoom-link">Zoom Link:</label>
-                                    <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
-                                        type=text></input>
-                                </div>
-                                <div>
-                                    <label for="to-do-list">To Do List:</label>
-                                    <input placeHolder="Final Project" id="to-do-list" type=text></input>
-                                </div>
-                                <div>
-                                    <button class="submit-button">
-                                        submit
-                                    </button>
-                                </div>
-                            </form>
+
+                            <div>
+                                <label for="event-name">Event Name:</label>
+                                <input placeHolder="Info340" id="event-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="host-name">Host Name:</label>
+                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="zoom-link">Zoom Link:</label>
+                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                    type=text></input>
+                            </div>
+                            <div>
+                                <label for="to-do-list">To Do List:</label>
+                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                            </div>
+
+                            <button class="submit" id="submit-button-1">submit</button>
+
+
                         </div>
                     </div>
                     <div class="overlay"></div>
@@ -144,7 +142,7 @@
                 <div class="row">
                     <h2 class="section-title">Office Hour</h2>
                 </div>
-                <div class="row">
+                <div class="row" id="row-2">
 
                     <!-- sam office hour-->
                     <div class="card">
@@ -207,12 +205,43 @@
                         <img data-modal-target="#modal-marc" src="img/marc.png" alt="Marc's office hour">
                         <h3 data-modal-target="#modal-marc" class="card-title">We love Marc :)</h3>
                     </div>
+                    <button class="add-button" data-modal-target="#modal-oh-button">+</button>
+                    <div class="modal" id="modal-oh-button">
+                        <div class="modal-header">
+                            <div class="title">Add a new event?</div>
+                        </div>
+                        <div class="modal-body">
+
+                            <div>
+                                <label for="event-name">Event Name:</label>
+                                <input placeHolder="Info340" id="event-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="host-name">Host Name:</label>
+                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="zoom-link">Zoom Link:</label>
+                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                    type=text></input>
+                            </div>
+                            <div>
+                                <label for="to-do-list">To Do List:</label>
+                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                            </div>
+
+                            <button class="submit" id="submit-button-2">submit</button>
+
+
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
                 </div>
 
                 <div class="row">
                     <h2 class="section-title">Group Meeting</h2>
                 </div>
-                <div class="row">
+                <div class="row" id="row-3">
                     <!-- dogpaws meeting-->
                     <div class="card">
                         <div class="modal" id="modal-dog">
@@ -271,6 +300,37 @@
                         <img data-modal-target="#modal-lyons" src="img/Info340-group.jpg" alt="Info340 meeting">
                         <h3 data-modal-target="#modal-lyons" class="card-title">Info 340 Group Meeting</h3>
                     </div>
+                    <button class="add-button" data-modal-target="#modal-meeting-button">+</button>
+                    <div class="modal" id="modal-meeting-button">
+                        <div class="modal-header">
+                            <div class="title">Add a new event?</div>
+                        </div>
+                        <div class="modal-body">
+
+                            <div>
+                                <label for="event-name">Event Name:</label>
+                                <input placeHolder="Info" id="event-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="host-name">Host Name:</label>
+                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="zoom-link">Zoom Link:</label>
+                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                    type=text></input>
+                            </div>
+                            <div>
+                                <label for="to-do-list">To Do List:</label>
+                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                            </div>
+
+                            <button class="submit" id="submit-button-3">submit</button>
+
+
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
                 </div>
 
             </div> <!-- container -->
