@@ -51,6 +51,11 @@ deleteButtons.forEach(button => {
 })
 
 
+// check url legal
+function checkURL(url) {
+  return (url.match(/\.(jpeg|jpg|gif|png).*$/) != null);
+}
+
 // add a new card from the user input
 let submitButtons = document.querySelectorAll(".submit");
 submitButtons.forEach(element => {
@@ -65,11 +70,12 @@ function insert(event) {
   let hostNameInput = document.querySelector('#' + rowElem.id + ' #host-name').value;
   let zoomLinkInput = document.querySelector('#' + rowElem.id + ' #zoom-link').value;
   let toDoListInput = document.querySelector('#' + rowElem.id + ' #to-do-list').value;
+  let imgInput = document.querySelector('#' + rowElem.id + ' #source').value;
   document.querySelector('#' + rowElem.id + ' #event-name').value = "";
   document.querySelector('#' + rowElem.id + ' #host-name').value = "";
   document.querySelector('#' + rowElem.id + ' #zoom-link').value = "";
   document.querySelector('#' + rowElem.id + ' #to-do-list').value = "";
-
+  document.querySelector('#' + rowElem.id + ' #source').value = "";
   let addButton = document.querySelector('#' + rowElem.id + ' .add-button');
   rowElem.insertBefore(cardElem, addButton);
   document.querySelector("#card-new .card-title").textContent = eventNameInput;
@@ -82,8 +88,13 @@ function insert(event) {
   document.querySelector('#card-new h3').removeAttribute('data-modal-target')
   document.querySelector('#card-new img').removeAttribute('data-modal-target')
   document.querySelector("#card-new img").dataset.modalTarget = '#' + modalName;
-  document.querySelector("#card-new img").src = "img/info.png";
-  document.querySelector("#card-new img").alt = "default image with nice info logo";
+  if (checkURL(imgInput)) {
+    document.querySelector("#card-new img").src = imgInput;
+    document.querySelector("#card-new img").alt = "user uploaded image";
+  } else {
+    document.querySelector("#card-new img").src = "img/info.png";
+    document.querySelector("#card-new img").alt = "default image with nice info logo";
+  }
   document.querySelector("#card-new h3").dataset.modalTarget = '#' + modalName;
   cardElem.removeAttribute('id');
   openModalButtons = document.querySelectorAll('[data-modal-target]')
