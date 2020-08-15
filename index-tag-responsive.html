@@ -106,6 +106,39 @@
                         <img data-modal-target="#modal-math381" src="img/math381.png" alt="Math381 course page">
                         <h3 data-modal-target="#modal-math381" class="card-title">Math 381</h3>
                     </div>
+                    <button data-modal-target="#modal">+</button>
+                    <div class="modal" id="modal">
+                        <div class="modal-header">
+                            <div class="title">Add a new event?</div>
+                        </div>
+                        <div class="modal-body">
+                            <form class="col-1-form">
+                                <div>
+                                    <label for="event-name">Event Name:</label>
+                                    <input placeHolder="Info340" id="event-name" type=text></input>
+                                </div>
+                                <div>
+                                    <label for="host-name">Host Name:</label>
+                                    <input placeHolder="Marc Schmalz" id="event-name" type=text></input>
+                                </div>
+                                <div>
+                                    <label for="zoom-link">Zoom Link:</label>
+                                    <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                        type=text></input>
+                                </div>
+                                <div>
+                                    <label for="to-do-list">To Do List:</label>
+                                    <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                                </div>
+                                <div>
+                                    <button class="submit-button">
+                                        submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
                 </div>
 
                 <div class="row">
@@ -126,7 +159,7 @@
                                 </div>
                                 <div>To do List: Read chapter 5</div>
                                 <button class="delete">delete</button>
-                            </div>  
+                            </div>
                         </div>
                         <div class="overlay"></div>
                         <img data-modal-target="#modal-sam" src="img/sam.png" alt="Sam's office hour">

@@ -6,6 +6,12 @@
   width: 80%;
 } 
 
+#column-1{
+   overflow: auto;
+  white-space: nowrap;
+}
+
+
 .row {
   margin-left: 5rem;
   display: flex;
@@ -149,7 +155,7 @@ h1, h2, h3, h4 {
   border: 2px solid rgb(102, 62, 62);
   width: 214px;
   min-height: 200px;
-  margin-right: 250px;
+  margin-right: 125px;
   margin-bottom: 30px;
   box-shadow: 5px 2px 2px rgb(120, 120, 120);
   background-color: white;
