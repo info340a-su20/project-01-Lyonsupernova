@@ -45,34 +45,23 @@ deleteButtons.forEach(button => {
 
 
 // add a new card from the user input
-
-// select all of the input get values
-
-
-
-// build card 
-// create a card like element first test
-
-
-// first select the button submit add event listener and create a card
 let submitButtons = document.querySelectorAll(".submit");
-
-
 submitButtons.forEach(element => {
   element.addEventListener("click", insert, false);
 })
-/*submitButtons[1].addEventListener('click', insert);
-submitButtons[2].addEventListener('click', insert);*/
-
+// insert
 function insert(event) {
   let rowElem = event.target.closest(".row");
   let cardElem = document.querySelector('.card').cloneNode(true);
   cardElem.id = "card-new";
   let eventNameInput = document.querySelector('#' + rowElem.id + ' #event-name').value;
-  let hostNameInput =  document.querySelector('#' + rowElem.id + ' #host-name').value;
-  let zoomLinkInput =   document.querySelector('#' + rowElem.id + ' #zoom-link').value;
-  let toDoListInput =  document.querySelector('#' + rowElem.id + ' #to-do-list').value;
-
+  let hostNameInput = document.querySelector('#' + rowElem.id + ' #host-name').value;
+  let zoomLinkInput = document.querySelector('#' + rowElem.id + ' #zoom-link').value;
+  let toDoListInput = document.querySelector('#' + rowElem.id + ' #to-do-list').value;
+  document.querySelector('#' + rowElem.id + ' #event-name').value = "";
+  document.querySelector('#' + rowElem.id + ' #host-name').value = "";
+  document.querySelector('#' + rowElem.id + ' #zoom-link').value = "";
+  document.querySelector('#' + rowElem.id + ' #to-do-list').value = "";
 
   let addButton = document.querySelector('#' + rowElem.id + ' .add-button');
   rowElem.insertBefore(cardElem, addButton);
@@ -105,13 +94,13 @@ function insert(event) {
     })
   })
   deleteButtons = document.querySelectorAll('.delete');
-deleteButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    let rowElem = button.closest(".row");
-    let cardNestedElem = button.closest('.card');
-    rowElem.removeChild(cardNestedElem);
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      let rowElem = button.closest(".row");
+      let cardNestedElem = button.closest('.card');
+      rowElem.removeChild(cardNestedElem);
+    })
   })
-})
 
 }
 
