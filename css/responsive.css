@@ -11,6 +11,9 @@
   white-space: nowrap;
 }
 
+.section-title{
+  padding-right: 1rem;
+}
 
 .row {
   margin-left: 5rem;

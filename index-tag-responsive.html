@@ -27,6 +27,7 @@
         <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
         <a href="#">Schedule</a>
         <a href="#">Category</a>
+
         <!-- profile add with new modal -->
         <a data-modal-target="#modal-profile" href="#">Profile</a>
         <div class="modal" id="modal-profile">
@@ -44,7 +45,8 @@
         </div>
         <div class="overlay"></div>
 
-        <!-- contact with new modal -->>
+
+        <!-- contact with new modal -->
         <a data-modal-target="#modal-contact" href="#">Contact</a>
         <div class="modal" id="modal-contact">
             <div class="modal-header">
@@ -60,6 +62,7 @@
             </div>
         </div>
         <div class="overlay"></div>
+
     </div>
     <!-- Use any element to open the sidenav -->
     <!-- <span onclick="openNav()">open</span> -->
@@ -73,8 +76,20 @@
                     </h1>
                 </div>
 
-                <div class="row">
+                <div class="row" id="row-sec-1">
                     <h2 class="section-title">Lecture</h2>
+                    <button data-modal-target="#modal-edit-button-1" class="edit">edit</button>
+                    <div class="modal" id="modal-edit-button-1">
+                        <div class="modal-header">
+                            <div class="title">Edit</div>
+                        </div>
+                        <div class="modal-body">
+                            <label for="title-name">Title Name:</label>
+                            <input placeHolder="Lecture" id="title-name" type="textarea"></input>
+                            <button data-close-button class="edit-submit" id="submit-button-edit-1">submit</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
                 </div>
                 <div class="row" id="row-1">
                     <!-- INFO340 card-->
@@ -175,8 +190,20 @@
                     <div class="overlay"></div>
                 </div>
 
-                <div class="row">
+                <div class="row" id="row-sec-2">
                     <h2 class="section-title">Office Hour</h2>
+                    <button data-modal-target="#modal-edit-button-2" class="edit">edit</button>
+                    <div class="modal" id="modal-edit-button-2">
+                        <div class="modal-header">
+                            <div class="title">Edit</div>
+                        </div>
+                        <div class="modal-body">
+                            <label for="title-name">Title Name:</label>
+                            <input placeHolder="Lecture" id="title-name" type="textarea"></input>
+                            <button data-close-button class="edit-submit" id="submit-button-edit-2">submit</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
                 </div>
                 <div class="row" id="row-2">
 
@@ -278,8 +305,20 @@
                     <div class="overlay"></div>
                 </div>
 
-                <div class="row">
+                <div class="row" id="row-sec-3">
                     <h2 class="section-title">Group Meeting</h2>
+                    <button data-modal-target="#modal-edit-button-3" class="edit">edit</button>
+                    <div class="modal" id="modal-edit-button-3">
+                        <div class="modal-header">
+                            <div class="title">Edit</div>
+                        </div>
+                        <div class="modal-body">
+                            <label for="title-name">Title Name:</label>
+                            <input placeHolder="Lecture" id="title-name" type="textarea"></input>
+                            <button data-close-button class="edit-submit" id="submit-button-edit-3">submit</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
                 </div>
                 <div class="row" id="row-3">
                     <!-- dogpaws meeting-->

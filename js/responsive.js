@@ -124,3 +124,17 @@ function insert(event) {
 
 
 
+// how to set title name 
+let editButtons = document.querySelectorAll(".edit-submit");
+editButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    let rowId= button.closest('.row').id;
+    let userInputElem = document.querySelector('#' + rowId + " #title-name").value;
+    document.querySelector('#' + rowId + " #title-name").value = "";
+    let h2Elem = document.querySelector('#' + rowId + " .section-title");
+    if(userInputElem.length != 0){
+      h2Elem.textContent = userInputElem;
+    }
+    
+  })
+})
