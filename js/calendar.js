@@ -104,3 +104,91 @@ function sortTime(i) {
         row1Elem.appendChild(arrayCardTime[i].card);
     }
 }
+
+
+
+// check url legal
+function checkURL(url) {
+    return (url.match(/\.(jpeg|jpg|gif|png).*$/) != null);
+  }
+  
+  // add a new card from the user input
+  let submitButtons = document.querySelectorAll(".submit");
+  submitButtons.forEach(element => {
+    element.addEventListener("click", insert, false);
+  })
+  // insert
+  function insert(event) {
+    let rowElem = document.querySelector('#row-' + event.target.id.slice(-1)); 
+    
+    let cardElem = document.querySelector('.card').cloneNode(true);
+    cardElem.id = "card-new";
+    let modayBodyName = event.target.parentElement.className
+
+
+
+    // document.querySelectorAll(".submit")[0].closest('div')
+
+    let eventNameInput = document.querySelector('.' + modayBodyName + ' #event-name').value;
+    let hostNameInput = document.querySelector('.' + modayBodyName + ' #host-name').value;
+    let zoomLinkInput = document.querySelector('.' + modayBodyName + ' #zoom-link').value;
+    let toDoListInput = document.querySelector('.' + modayBodyName + ' #to-do-list').value;
+    let imgInput = document.querySelector('.' + modayBodyName + ' #source').value;
+    let dateInput = document.querySelector('.' + modayBodyName + ' #date').value;
+
+
+    
+    document.querySelector('.' + modayBodyName + ' #event-name').value = "";
+    document.querySelector('.' + modayBodyName + ' #host-name').value = "";
+    document.querySelector('.' + modayBodyName + ' #zoom-link').value = "";
+    document.querySelector('.' + modayBodyName + ' #to-do-list').value = "";
+    document.querySelector('.' + modayBodyName + ' #source').value = "";
+    document.querySelector('.' + modayBodyName + ' #date').value = "";
+
+   // let addButton = document.querySelector('#' + rowElem.id + ' .add-button');
+    rowElem.appendChild(cardElem);
+    document.querySelector("#card-new .content").textContent = eventNameInput;
+    document.querySelector("#card-new .title").textContent = eventNameInput;
+    document.querySelector("#card-new .host").textContent = "Host: " + hostNameInput;
+    document.querySelector("#card-new .zoom").textContent = "Zoom Link: " + zoomLinkInput;
+    document.querySelector("#card-new .toDo").textContent = "To do List: " + toDoListInput;
+    document.querySelector("#card-new .time").textContent = dateInput;
+
+    let modalName = 'modal-' + eventNameInput.replace(/\s+/g, '-').toLowerCase();
+    document.querySelector("#card-new .modal").id = modalName;
+    document.querySelector('#card-new .time-card').removeAttribute('data-modal-target')
+    document.querySelector('#card-new .content').removeAttribute('data-modal-target')
+    document.querySelector("#card-new .time-card").dataset.modalTarget = '#' + modalName;
+    if (checkURL(imgInput)) {
+      document.querySelector("#card-new .time-card").style.backgroundImage = imgInput;
+    } else {
+        document.querySelector("#card-new .time-card").style.backgroundImage = 'url(img/info.png)';;
+    }
+
+
+    document.querySelector("#card-new .content").dataset.modalTarget = '#' + modalName;
+    cardElem.removeAttribute('id');
+    openModalButtons = document.querySelectorAll('[data-modal-target]')
+    overlays = document.querySelectorAll('.overlay')
+    openModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+      })
+    })
+    overlays.forEach(overlay => {
+      overlay.addEventListener('click', () => {
+        const modals = document.querySelector('.modal.active')
+        closeModal(modals);
+      })
+    })
+    deleteButtons = document.querySelectorAll('.delete');
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        let rowElem = button.closest(".row");
+        let cardNestedElem = button.closest('.card');
+        rowElem.removeChild(cardNestedElem);
+      })
+    })
+    sortTime(1);
+  }

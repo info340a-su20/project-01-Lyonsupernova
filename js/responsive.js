@@ -119,7 +119,6 @@ function insert(event) {
       rowElem.removeChild(cardNestedElem);
     })
   })
-
 }
 
 
