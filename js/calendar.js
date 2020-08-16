@@ -96,9 +96,8 @@ function sortTime(i) {
 
     // 3. sorting according to time 
     arrayCardTime.sort((a, b) => (a.time > b.time) ? 1 : -1)
-
     // 4. use insert before / after to implement 
-    let row1Elem = document.querySelector('#row-1');
+    let row1Elem = document.querySelector('#row-' + i);
     row1Elem.innerHTML = '' //  clear out the row-1 inner html
     for (let i = 0; i < arrayCardTime.length; i++) { // insert the card one by one from arrayCardTime
         row1Elem.appendChild(arrayCardTime[i].card);
@@ -120,30 +119,21 @@ function checkURL(url) {
   // insert
   function insert(event) {
     let rowElem = document.querySelector('#row-' + event.target.id.slice(-1)); 
-    
     let cardElem = document.querySelector('.card').cloneNode(true);
     cardElem.id = "card-new";
-    let modayBodyName = event.target.parentElement.className
-
-
-
-    // document.querySelectorAll(".submit")[0].closest('div')
-
-    let eventNameInput = document.querySelector('.' + modayBodyName + ' #event-name').value;
-    let hostNameInput = document.querySelector('.' + modayBodyName + ' #host-name').value;
-    let zoomLinkInput = document.querySelector('.' + modayBodyName + ' #zoom-link').value;
-    let toDoListInput = document.querySelector('.' + modayBodyName + ' #to-do-list').value;
-    let imgInput = document.querySelector('.' + modayBodyName + ' #source').value;
-    let dateInput = document.querySelector('.' + modayBodyName + ' #date').value;
-
-
-    
-    document.querySelector('.' + modayBodyName + ' #event-name').value = "";
-    document.querySelector('.' + modayBodyName + ' #host-name').value = "";
-    document.querySelector('.' + modayBodyName + ' #zoom-link').value = "";
-    document.querySelector('.' + modayBodyName + ' #to-do-list').value = "";
-    document.querySelector('.' + modayBodyName + ' #source').value = "";
-    document.querySelector('.' + modayBodyName + ' #date').value = "";
+    let modayBodyName = event.target.parentElement.id;
+    let eventNameInput = document.querySelector('#' + modayBodyName + ' #event-name').value;
+    let hostNameInput = document.querySelector('#' + modayBodyName + ' #host-name').value;
+    let zoomLinkInput = document.querySelector('#' + modayBodyName + ' #zoom-link').value;
+    let toDoListInput = document.querySelector('#' + modayBodyName + ' #to-do-list').value;
+    let imgInput = document.querySelector('#' + modayBodyName + ' #source').value;
+    let dateInput = document.querySelector('#' + modayBodyName + ' #date').value;
+    document.querySelector('#' + modayBodyName + ' #event-name').value = "";
+    document.querySelector('#' + modayBodyName + ' #host-name').value = "";
+    document.querySelector('#' + modayBodyName + ' #zoom-link').value = "";
+    document.querySelector('#' + modayBodyName + ' #to-do-list').value = "";
+    document.querySelector('#' + modayBodyName + ' #source').value = "";
+    document.querySelector('#' + modayBodyName + ' #date').value = "";
 
    // let addButton = document.querySelector('#' + rowElem.id + ' .add-button');
     rowElem.appendChild(cardElem);
@@ -164,8 +154,6 @@ function checkURL(url) {
     } else {
         document.querySelector("#card-new .time-card").style.backgroundImage = 'url(img/info.png)';;
     }
-
-
     document.querySelector("#card-new .content").dataset.modalTarget = '#' + modalName;
     cardElem.removeAttribute('id');
     openModalButtons = document.querySelectorAll('[data-modal-target]')
@@ -190,5 +178,6 @@ function checkURL(url) {
         rowElem.removeChild(cardNestedElem);
       })
     })
-    sortTime(1);
+    sortTime(event.target.id.slice(-1));
   }
+  

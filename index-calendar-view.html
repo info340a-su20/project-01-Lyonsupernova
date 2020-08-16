@@ -131,7 +131,7 @@
 
                             <!-- Info340 card -->
                             <div class="card">
-                                <div class="modal" id="modal-info340">
+                                <div class="modal" id="modal-info340-tomorrow">
                                     <div class="modal-header">
                                         <div class="title">Info340</div>
                                     </div>
@@ -145,12 +145,12 @@
                                     </div>
                                 </div>
                                 <div class="overlay"></div>
-                                <div data-modal-target="#modal-info340" class="info340 time-card">
+                                <div data-modal-target="#modal-info340-tomorrow" class="info340 time-card">
                                     <div class="time">
                                         <span>1:00-4:00PM</span>
                                     </div>
                                 </div>
-                                <div data-modal-target="#modal-info340" class="content">Info340</div>
+                                <div data-modal-target="#modal-info340-tomorrow" class="content">Info340</div>
                             </div>
 
 
@@ -158,7 +158,7 @@
 
                             <!-- Info340 group meeting-->
                             <div class="card">
-                                <div class="modal" id="modal-lyons">
+                                <div class="modal" id="modal-lyons-today">
                                     <div class="modal-header">
                                         <div class="title">Info 340 Group Meeting</div>
                                     </div>
@@ -172,12 +172,12 @@
                                     </div>
                                 </div>
                                 <div class="overlay"></div>
-                                <div data-modal-target="#modal-lyons" class="info340-group time-card">
+                                <div data-modal-target="#modal-lyons-today" class="info340-group time-card">
                                     <div class="time">
                                         <span>8:00-8:30PM</span>
                                     </div>
                                 </div>
-                                <div data-modal-target="#modal-lyons" class="content">Info340 group meeting</div>
+                                <div data-modal-target="#modal-lyons-today" class="content">Info340 group meeting</div>
                             </div>
                         </div>
 
@@ -188,8 +188,8 @@
                             <div class="modal-header">
                                 <div class="title">Add a new event?</div>
                             </div>
-                            <div class="modal-body">
-    
+                            <div class="modal-body" id="modal-body-1">
+
                                 <div>
                                     <label for="event-name">Event Name:</label>
                                     <input placeHolder="Info" id="event-name" type=text></input>
@@ -253,7 +253,7 @@
                             <!-- info340 card -->
 
                             <div class="card">
-                                <div class="modal" id="modal-info340">
+                                <div class="modal" id="modal-info340-future">
                                     <div class="modal-header">
                                         <div class="title">Info340</div>
                                     </div>
@@ -267,16 +267,51 @@
                                     </div>
                                 </div>
                                 <div class="overlay"></div>
-                                <div data-modal-target="#modal-info340" class="info340 time-card">
+                                <div data-modal-target="#modal-info340-future" class="info340 time-card">
                                     <div class="time">
                                         <span>1:00-4:00PM</span>
                                     </div>
                                 </div>
-                                <div data-modal-target="#modal-info340" class="content">Info340</div>
+                                <div data-modal-target="#modal-info340-future" class="content">Info340</div>
                             </div>
                         </div>
+                        <!-- the add on button to add a new event to calendar view -->
+                        <button class="add-button" data-modal-target="#modal-tomorrow-button">+</button>
+                        <div class="modal" id="modal-tomorrow-button">
+                            <div class="modal-header">
+                                <div class="title">Add a new event?</div>
+                            </div>
+                            <div class="modal-body" id="modal-body-2">
+                                <div>
+                                    <label for="event-name">Event Name:</label>
+                                    <input placeHolder="Info" id="event-name" type=text></input>
+                                </div>
+                                <div>
+                                    <label for="host-name">Host Name:</label>
+                                    <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                                </div>
+                                <div>
+                                    <label for="zoom-link">Zoom Link:</label>
+                                    <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                        type=text></input>
+                                </div>
+                                <div>
+                                    <label for="to-do-list">To Do List:</label>
+                                    <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                                </div>
+                                <div>
+                                    <label for="source">Image Source:</label>
+                                    <input placeHolder="Default image" id="source" type="textarea"></input>
+                                </div>
+                                <div>
+                                    <label for="source">Time:</label>
+                                    <input placeHolder="Example Format: 8:00-9:00AM" id="date" type="textarea"></input>
+                                </div>
+                                <button data-close-button class="submit" id="submit-button-2">submit</button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
                     </div>
-
 
                     <div class="col3">
                         <div class="text">
@@ -387,7 +422,7 @@
 
                             <!-- info 340 group meeting card -->
                             <div class="card">
-                                <div class="modal" id="modal-lyons">
+                                <div class="modal" id="modal-lyons-future">
                                     <div class="modal-header">
                                         <div class="title">Info 340 Group Meeting</div>
                                     </div>
@@ -401,14 +436,57 @@
                                     </div>
                                 </div>
                                 <div class="overlay"></div>
-                                <div data-modal-target="#modal-lyons" class="info340-group time-card">
+                                <div data-modal-target="#modal-lyons-future" class="info340-group time-card">
                                     <div class="time">
                                         <span>8:00-8:30PM</span>
                                     </div>
                                 </div>
-                                <div data-modal-target="#modal-lyons" class="content">Info340 group meeting</div>
+                                <div data-modal-target="#modal-lyons-future" class="content">Info340 group meeting</div>
                             </div>
+
+
+                            
                         </div>
+
+                         <!-- the add on button to add a new event to calendar view -->
+                         <button class="add-button" data-modal-target="#modal-future-button">+</button>
+                         <div class="modal" id="modal-future-button">
+                             <div class="modal-header">
+                                 <div class="title">Add a new event?</div>
+                             </div>
+                             <div class="modal-body" id="modal-body-3">
+ 
+                                 <div>
+                                     <label for="event-name">Event Name:</label>
+                                     <input placeHolder="Info" id="event-name" type=text></input>
+                                 </div>
+                                 <div>
+                                     <label for="host-name">Host Name:</label>
+                                     <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                                 </div>
+                                 <div>
+                                     <label for="zoom-link">Zoom Link:</label>
+                                     <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                         type=text></input>
+                                 </div>
+                                 <div>
+                                     <label for="to-do-list">To Do List:</label>
+                                     <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                                 </div>
+                                 <div>
+                                     <label for="source">Image Source:</label>
+                                     <input placeHolder="Default image" id="source" type="textarea"></input>
+                                 </div>
+                                 <div>
+                                     <label for="source">Time:</label>
+                                     <input placeHolder="Example Format: 8:00-9:00AM" id="date" type="textarea"></input>
+                                 </div>
+                                 <button data-close-button class="submit" id="submit-button-3">submit</button>
+                             </div>
+                         </div>
+                         <div class="overlay"></div>
+
+
                     </div>
                 </div>
 
