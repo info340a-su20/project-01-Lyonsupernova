@@ -6,7 +6,7 @@
     <meta name="author" content="Cassie Mao, Lyons Lu, Wayne Zhang">
     <meta name="description" content="main page for meetyou, a view to display different tags, like  lectures...">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Main Page</title>
+    <title>Zoom Central: Category</title>
     <!-- normalize.css for cross-browser stuff -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Custom CSS -->
@@ -58,19 +58,20 @@
         </div>
         <div class="overlay"></div>
     </div>
+
     <!-- Use any element to open the sidenav -->
     <!-- <span onclick="openNav()">open</span> -->
     <main id="main">
         <section>
             <div class="container">
-                <div class="centered">
-                    <h1 class="welcome-title"><strong>Today </strong><a id="datetime"></a><p class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</p>
-                    </h1>
-                </div>
 
+                <h1 class="welcome-title"><strong>Today </strong><a id="datetime"></a><p class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</p>
+                </h1>
                 <div class="row" id="row-sec-1">
                     <h2 class="section-title">Lecture</h2>
-                    <button data-modal-target="#modal-edit-button-1" class="edit">edit category name</button>
+                    <button data-modal-target="#modal-edit-button-1" class="edit">
+                        edit category name
+                    </button>
                     <div class="modal" id="modal-edit-button-1">
                         <div class="modal-header">
                             <div class="title">Edit</div>
@@ -83,6 +84,7 @@
                     </div>
                     <div class="overlay"></div>
                 </div>
+
                 <div class="row" id="row-1">
 
                     <!-- INFO340 card-->
@@ -145,13 +147,15 @@
                         <img data-modal-target="#modal-math381" src="img/math381.png" alt="Math381 course page">
                         <h3 data-modal-target="#modal-math381" class="card-title">Math 381</h3>
                     </div>
-                    <button class="add-button" data-modal-target="#modal-lecture-button">+</button>
+
+                    <button class="add-button" data-modal-target="#modal-lecture-button">
+                        Add<br>meeting
+                    </button>
                     <div class="modal" id="modal-lecture-button">
                         <div class="modal-header">
                             <div class="title">Add a new event?</div>
                         </div>
                         <div class="modal-body">
-
                             <div>
                                 <label for="event-name">Event Name:</label>
                                 <input placeHolder="Info340" id="event-name" type="textarea"></input>
@@ -174,10 +178,9 @@
                                 <input placeHolder="Default image" id="source" type="textarea"></input>
                             </div>
 
-
-                            <button data-close-button class="submit" id="submit-button-1">submit</button>
-
-
+                            <button data-close-button class="submit" id="submit-button-1">
+                                submit
+                            </button>
                         </div>
                     </div>
                     <div class="overlay"></div>
@@ -185,7 +188,9 @@
 
                 <div class="row" id="row-sec-2">
                     <h2 class="section-title">Office Hour</h2>
-                    <button data-modal-target="#modal-edit-button-2" class="edit">edit</button>
+                    <button data-modal-target="#modal-edit-button-1" class="edit">
+                        edit category name
+                    </button>
                     <div class="modal" id="modal-edit-button-2">
                         <div class="modal-header">
                             <div class="title">Edit</div>
@@ -261,13 +266,14 @@
                         <img data-modal-target="#modal-marc" src="img/marc.png" alt="Marc's office hour">
                         <h3 data-modal-target="#modal-marc" class="card-title">We love Marc :)</h3>
                     </div>
-                    <button class="add-button" data-modal-target="#modal-oh-button">+</button>
+                    <button class="add-button" data-modal-target="#modal-lecture-button">
+                        Add<br>meeting
+                    </button>
                     <div class="modal" id="modal-oh-button">
                         <div class="modal-header">
                             <div class="title">Add a new event?</div>
                         </div>
                         <div class="modal-body">
-
                             <div>
                                 <label for="event-name">Event Name:</label>
                                 <input placeHolder="Info340" id="event-name" type=text></input>
@@ -289,9 +295,7 @@
                                 <label for="source">Image Source:</label>
                                 <input placeHolder="Default image" id="source" type="textarea"></input>
                             </div>
-
                             <button data-close-button class="submit" id="submit-button-2">submit</button>
-
 
                         </div>
                     </div>
@@ -300,7 +304,9 @@
 
                 <div class="row" id="row-sec-3">
                     <h2 class="section-title">Group Meeting</h2>
-                    <button data-modal-target="#modal-edit-button-3" class="edit">edit</button>
+                    <button data-modal-target="#modal-edit-button-1" class="edit">
+                        edit category name
+                    </button>
                     <div class="modal" id="modal-edit-button-3">
                         <div class="modal-header">
                             <div class="title">Edit</div>
@@ -373,7 +379,9 @@
                         <img data-modal-target="#modal-lyons" src="img/Info340-group.jpg" alt="Info340 meeting">
                         <h3 data-modal-target="#modal-lyons" class="card-title">Info 340 Group Meeting</h3>
                     </div>
-                    <button class="add-button" data-modal-target="#modal-meeting-button">+</button>
+                    <button class="add-button" data-modal-target="#modal-lecture-button">
+                        Add<br>meeting
+                    </button>
                     <div class="modal" id="modal-meeting-button">
                         <div class="modal-header">
                             <div class="title">Add a new event?</div>
@@ -405,6 +413,20 @@
                     </div>
                     <div class="overlay"></div>
                 </div>
+                
+                <footer>
+                    <div class="col">
+                        <h3 class="footer-title">Team Member</h3>
+                        <ul>
+                            <li class="name">Lyons Lu</li>
+                            <li class="name">Cassie Mao</li>
+                            <li class="name">Wayne Zhang</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3 class="footer-title">&copy;&nbsp;2020 Lu, Mao, Zhang</h3>
+                    </div>
+                </footer>
 
             </div> <!-- container -->
         </section>
