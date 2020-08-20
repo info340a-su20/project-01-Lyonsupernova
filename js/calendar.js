@@ -198,3 +198,46 @@ tomorrowTimeElm.textContent = monthNames[today.getMonth()] + ' ' + today.getDate
 let future = today.setDate(new Date().getDate() + 2);
 futureTimeElem.textContent = monthNames[today.getMonth()] + ' ' + today.getDate();
 
+
+
+
+// AJAX Request 
+
+const modalFlags = [
+  "modal-tim", 
+  "modal-cse351",
+  "modal-info340-tomorrow",
+  "modal-lyons-today",
+  "modal-math381",
+  "modal-info340-future",
+  "modal-sam",
+  "modal-marc",
+  "modal-dog",
+  "modal-7L",
+  "modal-lyons-future"
+]
+
+let index = 0;
+let getJSONForData = $.getJSON('data/data.json', function (data) {
+  data.forEach(card => {
+    console.log(card);
+    renderCard(card, index);
+    index++;
+  })
+})
+
+
+function renderCard(modal, i){
+  let modalID = "#" + modalFlags[i];
+  let titleElem = document.querySelector(modalID + ' .title');
+  let hostElem  = document.querySelector(modalID + ' .host');
+  let zoomElem  = document.querySelector(modalID + ' .zoom');
+  let toDoElem  = document.querySelector(modalID + ' .toDo');
+  let timeElem  = document.querySelector(modalID).nextElementSibling.nextElementSibling;
+  let textElem  = document.querySelector(modalID).nextElementSibling.nextElementSibling.nextElementSibling;
+  titleElem.textContent = modal.EventName;
+  hostElem.innerHTML = "<strong>Host: </strong>" + modal.HostName;
+  toDoElem.innerHTML = "<strong>To Do List: </strong>" + modal.ToDoList;
+  zoomElem.innerHTML = "<strong>Zoom Link: </strong>" + "<a href=&quot;" + modal.ZoomLink + "&quot;>" + modal.ZoomLink + "</a>"; 
+  textElem.textContent= modal.EventName;
+}
