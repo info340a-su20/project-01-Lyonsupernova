@@ -1,0 +1,211 @@
+/* General Structure */
+*, *::after, *::before {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+.container {
+  width: 80%;
+  margin-left: 4rem;
+}
+.row {
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+body {
+  background-color: #ebfafa;
+}
+main {
+  margin-left: 8rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 450px) {
+  .side-nav {
+    width: 100%;
+  }
+  .side-nav a {
+    font-size: 13px;
+  }
+  .container {
+    margin: 1rem;
+  }
+  img {
+    display: none;
+  }
+  .card .card-title {
+    text-align: center;
+    margin-top: 5rem;
+    background-image: url(../)
+  }
+}
+
+/* side nav */
+.side-nav {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  width: 10rem;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #223F3F;
+  /* Black */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 20px;
+  display: flex;
+  /* space evenly the text */
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.nav-item {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 8px 20px;
+  width: auto;
+  text-decoration: none;
+  font-size: 20px;
+  color: #c7c7c7;
+  display: block;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  padding: 0;
+}
+.nav-item:hover {
+  background-color: black;
+  color: white;
+  font-weight: 400;
+  transition: 0.3s;
+}
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.modal-header{
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.modal-body {
+  padding: 10px 15px;
+}
+.overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Main content */
+.centered {
+  text-align: center;
+}
+.section-title, .card-title {
+  font-size: 28px;
+}
+.welcome-title {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 150%;
+}
+.welcome-title strong {
+  font-weight: 500;
+}
+.welcome-person {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  color: #223F3F;
+}
+
+.section-title {
+  text-transform: uppercase;
+  /* text-decoration: underline; */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  margin-right: 20px;
+  letter-spacing: 2px;
+}
+
+/* Cards */
+
+/* card view add with border */
+.card {
+  border: 2px solid rgb(102, 62, 62);
+  width: 214px;
+  min-height: 200px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 2px rgb(170, 170, 170);
+  background-color: white;
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 5px 2px 2px rgb(75, 45, 45);
+  transition: 0.5s;
+}
+
+.card-title {
+  font-size: 16px;
+  margin-top: 8px;
+}
+.card img {
+  /* display: block; */
+  width: 210px;
+  height: 150px;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(102, 62, 62);
+}
+
+/* Buttons */
+button {
+  padding: 4px 12px;
+  border: none;
+  background-color: #3d3d3d;
+  color: white;
+}

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zoom Central: Calendar</title>
+    <meta name="author" content="Cassie Mao, Lyons Lu, Wayne Zhang">
+    <meta name="description"
+        content="main page for meetyou, a view to switch back and forth from normal tag view to calendar view">
+    <!-- normalize.css for cross-browser stuff -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index-calendar.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- load font-awesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Site Icon -->
+    <link rel="icon" href="./img/icon.jpg">
+    <!-- load js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script defer src="js/calendar.js"></script>
+</head>
+
+<body>
+    <!-- Side nav structure from w3schools: https://www.w3schools.com/howto/howto_js_sidenav.asp -->
+    <div id="side-nav" class="side-nav">
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        <a href="category.html">Category</a>
+        <a href="calendar.html">Calendar</a>
+        <!-- profile add with new modal -->
+        <a data-modal-target="#modal-profile" href="#">Profile</a>
+        <div class="modal" id="modal-profile">
+            <div class="modal-header">
+                <div class="title">Profile</div>
+            </div>
+            <div class="modal-body">
+                <div class="container text-center">
+                    <div class="profile-icon">
+                        <img src="img/penguin.jpeg">
+                    </div>
+                    <div class="profile-body">
+                        <p>Leroy Jenkins</p>
+                        <p><strong>Institute:</strong>&nbsp; University of Washington Seattle</p>
+                        <p><strong>Major:</strong>&nbsp; Informatics</p>
+                        <p><strong>About:</strong>&nbsp; Data enthusiast, skier, hiker, can't get enough of cat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+        <!-- contact with new modal -->
+        <a data-modal-target="#modal-contact" href="#">Contact</a>
+        <div class="modal" id="modal-contact">
+            <div class="modal-header">
+                <div class="title">Contact</div>
+            </div>
+            <div class="modal-body">
+                <form>
+                    ???
+                </form>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+    <!-- Use any element to open the sidenav -->
+    <!-- <span onclick="openNav()">open</span> -->
+    <main id="main">
+        <section class="user-defined-pool">
+            <div class="container">
+                <!-- Every col is a day's content -->
+                <div class="welcome">
+                    <h1 class="welcome-title">&nbsp;&nbsp;<a id="datetime"></a><a class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</a>
+                    </h1>
+                </div>
+                <div class="col1">
+                    <h2 class="subtitle">Today</h2>
+                    <div class="user-defined-pool-sm-1 row" id="row-1">
+                        <!-- tim's office hour card -->
+                        <div class="card">
+                            <div class="modal" id="modal-tim">
+                                <div class="modal-header">
+                                    <div class="title">Tim's Office Hour</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Tim Mandzyuk</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/97919961602">https://washington.zoom.us/j/97919961602</a>
+                                    </div>
+                                    <div class="toDo">To do List: Lab4 reflection halfway done!</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+
+                            <div data-modal-target="#modal-tim" class="tim time-card">
+                                <div class="time">
+                                    <span>9:30-10:30AM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-tim" class="content">Meet with Tim!</div>
+                        </div>
+
+                        <!-- cse351 card -->
+                        <div class="card">
+                            <div class="modal" id="modal-cse351">
+                                <div class="modal-header">
+                                    <div class="title">CSE351</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Porter Jones</div>
+                                    <div class='zoom'> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/92352902579">https://washington.zoom.us/j/92352902579</a>
+                                    </div>
+                                    <div class='toDo'>To do List: Lab 5</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-cse351" class="cse351 time-card">
+                                <div class="time">
+                                    <span>10:50-11:50AM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-cse351" class="content">Cse351</div>
+                        </div>
+
+
+
+                        <!-- Info340 card -->
+                        <div class="card">
+                            <div class="modal" id="modal-info340-tomorrow">
+                                <div class="modal-header">
+                                    <div class="title">Info340</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Marc Schmalz</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/2154191712">https://washington.zoom.us/j/2154191712</a>
+                                    </div>
+                                    <div class="toDo">To do List: Problem set + final project</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-info340-tomorrow" class="info340 time-card">
+                                <div class="time">
+                                    <span>1:00-4:00PM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-info340-tomorrow" class="content">Info340</div>
+                        </div>
+
+
+
+
+                        <!-- Info340 group meeting-->
+                        <div class="card">
+                            <div class="modal" id="modal-lyons-today">
+                                <div class="modal-header">
+                                    <div class="title">Info 340 Group Meeting</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Lyons Lu</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/92188124483">https://washington.zoom.us/j/92188124483</a>
+                                    </div>
+                                    <div class="toDo">To do List: Final Project Let's go!</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-lyons-today" class="info340-group time-card">
+                                <div class="time">
+                                    <span>8:00-8:30PM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-lyons-today" class="content">Info340 group meeting</div>
+                        </div>
+                    </div>
+
+
+                    <!-- the add on button to add a new event to calendar view -->
+                    <button class="add-button" data-modal-target="#modal-today-button">+</button>
+                    <div class="modal" id="modal-today-button">
+                        <div class="modal-header">
+                            <div class="title">Add a new event?</div>
+                        </div>
+                        <div class="modal-body" id="modal-body-1">
+
+                            <div>
+                                <label for="event-name">Event Name:</label>
+                                <input placeHolder="Info" id="event-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="host-name">Host Name:</label>
+                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="zoom-link">Zoom Link:</label>
+                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                    type=text></input>
+                            </div>
+                            <div>
+                                <label for="to-do-list">To Do List:</label>
+                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                            </div>
+                            <div>
+                                <label for="source">Image Source:</label>
+                                <input placeHolder="Default image" id="source" type="textarea"></input>
+                            </div>
+                            <div>
+                                <label for="source">Time:</label>
+                                <input placeHolder="Example Format: 8:00-9:00AM" id="date" type="textarea"></input>
+                            </div>
+                            <button data-close-button class="submit" id="submit-button-1">submit</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="col2">
+                    <div class="text">
+                        <p><em>August 11</em></p>
+                    </div>
+                    <div class="user-defined-pool-sm-2 row" id="row-2">
+
+                        <!-- Math381-->
+                        <div class="card">
+                            <div class="modal" id="modal-math381">
+                                <div class="modal-header">
+                                    <div class="title">Math381</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Stark Ledbetter</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/7196363574">https://washington.zoom.us/j/7196363574</a>
+                                    </div>
+                                    <div class="toDo">To do List: Homework 8 & presentation</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-math381" class="math381 time-card">
+                                <div class="time">
+                                    <span>9:40-10:40AM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-math381" class="content">Math381</div>
+                        </div>
+                        <!-- info340 card -->
+
+                        <div class="card">
+                            <div class="modal" id="modal-info340-future">
+                                <div class="modal-header">
+                                    <div class="title">Info340</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Marc Schmalz</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/2154191712">https://washington.zoom.us/j/2154191712</a>
+                                    </div>
+                                    <div class="toDo">To do List: Problem set + final project</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-info340-future" class="info340 time-card">
+                                <div class="time">
+                                    <span>1:00-4:00PM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-info340-future" class="content">Info340</div>
+                        </div>
+                    </div>
+                    <!-- the add on button to add a new event to calendar view -->
+                    <button class="add-button" data-modal-target="#modal-tomorrow-button">+</button>
+                    <div class="modal" id="modal-tomorrow-button">
+                        <div class="modal-header">
+                            <div class="title">Add a new event?</div>
+                        </div>
+                        <div class="modal-body" id="modal-body-2">
+                            <div>
+                                <label for="event-name">Event Name:</label>
+                                <input placeHolder="Info" id="event-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="host-name">Host Name:</label>
+                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="zoom-link">Zoom Link:</label>
+                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                    type=text></input>
+                            </div>
+                            <div>
+                                <label for="to-do-list">To Do List:</label>
+                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                            </div>
+                            <div>
+                                <label for="source">Image Source:</label>
+                                <input placeHolder="Default image" id="source" type="textarea"></input>
+                            </div>
+                            <div>
+                                <label for="source">Time:</label>
+                                <input placeHolder="Example Format: 8:00-9:00AM" id="date" type="textarea"></input>
+                            </div>
+                            <button data-close-button class="submit" id="submit-button-2">submit</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="col3">
+                    <div class="text">
+                        <p><em>August 12</em></p>
+                    </div>
+                    <div class="user-defined-pool-sm-3 row" id="row-3">
+
+
+                        <!-- Sam's office hour card -->
+                        <div class="card">
+                            <div class="modal" id="modal-sam">
+                                <div class="modal-header">
+                                    <div class="title">Sam's Office Hour</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Sam Wolfson</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/91461269257">https://washington.zoom.us/j/91461269257</a>
+                                    </div>
+                                    <div class="toDo">To do List: Read chapter 5</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+
+                            <div data-modal-target="#modal-sam" class="sam time-card">
+                                <div class="time">
+                                    <span>12:00-1:00PM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-sam" class="content">Sam's office hour</div>
+                        </div>
+                        <!-- Marc's office hour -->
+                        <div class="card">
+                            <div class="modal" id="modal-marc">
+                                <div class="modal-header">
+                                    <div class="title">Marc's Office Hour</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host:
+                                        Marc Schmalz</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/2154191712">https://washington.zoom.us/j/2154191712</a>
+                                    </div>
+                                    <div class="toDo">To do List: static mockup how to improve</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-marc" class="marc time-card">
+                                <div class="time">
+                                    <span>1:30-4:00PM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-marc" class="content">I love Marc</div>
+                        </div>
+
+
+                        <!-- dogpaws meeting -->
+                        <div class="card">
+                            <div class="modal" id="modal-dog">
+                                <div class="modal-header">
+                                    <div class="title">D.O.G.P.A.W.S Weekly Meeting</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host:
+                                        Sam Wang</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/99317325450">https://washington.zoom.us/j/99317325450</a>
+                                    </div>
+                                    <div class="toDo">To do List: SQL data input</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-dog" class="dogpaws time-card">
+                                <div class="time">
+                                    <span>4:30-5:30PM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-dog" class="content">D.O.G.P.A.W.S meeting</div>
+                        </div>
+
+
+                        <!-- 7lenora card -->
+                        <div class="card">
+                            <div class="modal" id="modal-7L">
+                                <div class="modal-header">
+                                    <div class="title">7Lenora meeting</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Dio Brando</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/99317325450">https://washington.zoom.us/j/99317325450</a>
+                                    </div>
+                                    <div class="toDo">To do List: the world!</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-7L" class="lenora time-card">
+                                <div class="time">
+                                    <span>7:00-8:00AM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-7L" class="content">7 Lenora's meeting</div>
+                        </div>
+
+                        <!-- info 340 group meeting card -->
+                        <div class="card">
+                            <div class="modal" id="modal-lyons-future">
+                                <div class="modal-header">
+                                    <div class="title">Info 340 Group Meeting</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="host">Host: Lyons Lu</div>
+                                    <div class="zoom"> Zoom Link: <a
+                                            href="https://washington.zoom.us/j/92188124483">https://washington.zoom.us/j/92188124483</a>
+                                    </div>
+                                    <div class="toDo">To do List: Final Project Let's go!</div>
+                                    <button class="delete">delete</button>
+                                </div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div data-modal-target="#modal-lyons-future" class="info340-group time-card">
+                                <div class="time">
+                                    <span>8:00-8:30PM</span>
+                                </div>
+                            </div>
+                            <div data-modal-target="#modal-lyons-future" class="content">Info340 group meeting</div>
+                        </div>
+
+
+                        
+                    </div>
+
+                        <!-- the add on button to add a new event to calendar view -->
+                        <button class="add-button" data-modal-target="#modal-future-button">+</button>
+                        <div class="modal" id="modal-future-button">
+                            <div class="modal-header">
+                                <div class="title">Add a new event?</div>
+                            </div>
+                            <div class="modal-body" id="modal-body-3">
+
+                                <div>
+                                    <label for="event-name">Event Name:</label>
+                                    <input placeHolder="Info" id="event-name" type=text></input>
+                                </div>
+                                <div>
+                                    <label for="host-name">Host Name:</label>
+                                    <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                                </div>
+                                <div>
+                                    <label for="zoom-link">Zoom Link:</label>
+                                    <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                        type=text></input>
+                                </div>
+                                <div>
+                                    <label for="to-do-list">To Do List:</label>
+                                    <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                                </div>
+                                <div>
+                                    <label for="source">Image Source:</label>
+                                    <input placeHolder="Default image" id="source" type="textarea"></input>
+                                </div>
+                                <div>
+                                    <label for="source">Time:</label>
+                                    <input placeHolder="Example Format: 8:00-9:00AM" id="date" type="textarea"></input>
+                                </div>
+                                <button data-close-button class="submit" id="submit-button-3">submit</button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+    </script>
+
+</body>
+
+</html>

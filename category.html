@@ -10,72 +10,67 @@
     <!-- normalize.css for cross-browser stuff -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" href="css/style.css">
     <!-- load font-awesome library -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Site Icon -->
+    <link rel="icon" href="./img/icon.jpg">
     <!-- JS for card view -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script defer src="js/responsive.js"></script>
 </head>
-
 <body>
     <!-- Side nav structure from w3schools: https://www.w3schools.com/howto/howto_js_sidenav.asp -->
     <div id="side-nav" class="side-nav">
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-        <a href="#">Schedule</a>
-        <a href="#">Category</a>
-
+        <a class="nav-item" href="category.html">Category</a>
+        <a class="nav-item" href="calendar.html">Calendar</a>
         <!-- profile add with new modal -->
-        <a data-modal-target="#modal-profile" href="#">Profile</a>
+        <a class="nav-item" data-modal-target="#modal-profile" href="#">Profile</a>
         <div class="modal" id="modal-profile">
             <div class="modal-header">
                 <div class="title">Profile</div>
             </div>
             <div class="modal-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum
-                obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus,
-                consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad
-                autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint
-                officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam!
-                Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+                <div class="container text-center">
+                    <div class="profile-icon">
+                        <img>
+                    </div>
+                    <div class="profile-body">
+                        <p>Leroy Jenkins</p>
+                        <p><strong>Institute:</strong>&nbsp; University of Washington Seattle</p>
+                        <p><strong>Major:</strong>&nbsp; Informatics</p>
+                        <p><strong>About:</strong>&nbsp; Data enthusiast, skier, hiker, can't get enough of cat</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="overlay"></div>
-
-
         <!-- contact with new modal -->
-        <a data-modal-target="#modal-contact" href="#">Contact</a>
+        <a class="nav-item" data-modal-target="#modal-contact" href="#">Contact</a>
         <div class="modal" id="modal-contact">
             <div class="modal-header">
                 <div class="title">Contact</div>
             </div>
-            <div class="modal-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum
-                obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus,
-                consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad
-                autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint
-                officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam!
-                Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
-            </div>
+            <form>
+                ???
+            </form>
         </div>
         <div class="overlay"></div>
-
     </div>
     <!-- Use any element to open the sidenav -->
     <!-- <span onclick="openNav()">open</span> -->
     <main id="main">
-        <section class="main-content">
+        <section>
             <div class="container">
-                <div class="row welcome">
-                    <h1 class="welcome-title">
-                        <strong>August</strong> 10, 2020 &nbsp;&nbsp; <a
-                            class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</a>
+                <div class="centered">
+                    <h1 class="welcome-title"><strong>Today </strong><a id="datetime"></a><p class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</p>
                     </h1>
                 </div>
 
                 <div class="row" id="row-sec-1">
                     <h2 class="section-title">Lecture</h2>
-                    <button data-modal-target="#modal-edit-button-1" class="edit">edit</button>
+                    <button data-modal-target="#modal-edit-button-1" class="edit">edit category name</button>
                     <div class="modal" id="modal-edit-button-1">
                         <div class="modal-header">
                             <div class="title">Edit</div>
@@ -89,11 +84,12 @@
                     <div class="overlay"></div>
                 </div>
                 <div class="row" id="row-1">
+
                     <!-- INFO340 card-->
                     <div class="card">
                         <div class="modal" id="modal-info340">
                             <div class="modal-header">
-                                <div class="title">Info340</div>
+                                <div class="title" id="">Info340</div>
                             </div>
                             <div class="modal-body">
                                 <div class="host">Host: Marc Schmalz</div>
@@ -413,6 +409,11 @@
             </div> <!-- container -->
         </section>
     </main>
+
+    <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+    </script>
 
 </body>
 

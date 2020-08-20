@@ -38,8 +38,6 @@ body{
 }
 
 
-
-
 /* When you mouse over the navigation links, change their color */
 .side-nav a:hover {
     color: #f1f1f1;
@@ -51,10 +49,9 @@ body{
     .side-nav a {font-size: 16px;}
 }
 
-
 /* body of calendar*/
 main section {
-    margin-left: 8rem; /* adjust the content based on navigation bar */
+    margin-left: 10rem; /* adjust the content based on navigation bar */
     margin-top: 2.5rem;
 }
 
@@ -186,7 +183,6 @@ main section {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
-
 
 
 .modal {
