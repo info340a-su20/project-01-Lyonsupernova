@@ -1,0 +1,65 @@
+[
+    {
+        "EventName": "Info340",
+        "HostName": "Marc Schmalz",
+        "ZoomLink": "https://washington.zoom.us/j/2154191712",
+        "ToDoList": "Problem set + final project",
+        "ImageSource": "img/info340.png"
+    },
+    {
+        "EventName": "CSE351",
+        "HostName": "Porter Jones",
+        "ZoomLink": "https://washington.zoom.us/j/92352902579",
+        "ToDoList": "Lab 5",
+        "ImageSource": "img/cse351.jpg"
+    },
+    {
+        "EventName": "Math381",
+        "HostName": "Stark Ledbetter",
+        "ZoomLink": "https://washington.zoom.us/j/7196363574",
+        "ToDoList": "Homework 8 & presentation",
+        "ImageSource": "img/math381.png"
+    },
+    {
+        "EventName": "Sam's Office Hour",
+        "HostName": "Sam Wolfson",
+        "ZoomLink": "https://washington.zoom.us/j/91461269257",
+        "ToDoList": "Read chapter 5",
+        "ImageSource": "img/sam.png"
+    },
+    {
+        "EventName": "Tim's Office Hour",
+        "HostName": "Tim Mandzyuk",
+        "ZoomLink": "https://washington.zoom.us/j/97919961602",
+        "ToDoList": "Lab4 reflection halfway done!",
+        "ImageSource": "img/tim.png"
+    },
+    {
+        "EventName": "Marc's Office Hour",
+        "HostName": "Marc Schmalz",
+        "ZoomLink": "https://washington.zoom.us/j/2154191712",
+        "ToDoList": "static mockup how to improve",
+        "ImageSource": "img/marc.png"
+    },
+    {
+        "EventName": "D.O.G.P.A.W.S Weekly Meeting",
+        "HostName": "Sam Wang",
+        "ZoomLink": "https://washington.zoom.us/j/99317325450",
+        "ToDoList": "SQL data input",
+        "ImageSource": "img/dogpaws.jpeg"
+    },
+    {
+        "EventName": "7Lenora meeting",
+        "HostName": "Dio Brando",
+        "ZoomLink": "https://washington.zoom.us/j/99317325450",
+        "ToDoList": "the world!",
+        "ImageSource": "img/7lenora.png"
+    },
+    {
+        "EventName": "Info 340 Group Meeting",
+        "HostName": "Lyons Lu",
+        "ZoomLink": "https://washington.zoom.us/j/92188124483",
+        "ToDoList": "Final Project Let's go!",
+        "ImageSource": "img/Info340-group.jpg"
+    }
+]
