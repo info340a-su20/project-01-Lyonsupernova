@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="css/index-calendar.css">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <!-- load font-awesome library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Site Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">    <!-- Site Icon -->
     <link rel="icon" href="./img/icon.jpg">
     <!-- load js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
@@ -30,19 +29,21 @@
         <!-- profile add with new modal -->
         <a data-modal-target="#modal-profile" href="#">Profile</a>
         <div class="modal" id="modal-profile">
-            <div class="modal-header">
-                <div class="title">Profile</div>
-            </div>
             <div class="modal-body">
-                <div class="container text-center">
-                    <div class="profile-icon">
-                        <img src="img/penguin.jpeg">
-                    </div>
+                <div class="container">
                     <div class="profile-body">
-                        <p>Leroy Jenkins</p>
-                        <p><strong>Institute:</strong>&nbsp; University of Washington Seattle</p>
-                        <p><strong>Major:</strong>&nbsp; Informatics</p>
-                        <p><strong>About:</strong>&nbsp; Data enthusiast, skier, hiker, can't get enough of cat</p>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="title" id="profile-title">Profile</div>
+                            </div>
+                            <div class="profile-icon">
+                                <img id="profile-image" src="img/penguin.jpeg" alt="cutie penguine"></img>
+                            </div>
+                            <p><strong>Name:</strong>&nbsp; Leroy Jenkins</p>
+                            <p><strong>Institute:</strong>&nbsp; University of Washington Seattle</p>
+                            <p><strong>Major:</strong>&nbsp; Informatics</p>
+                            <p><strong>About:</strong>&nbsp; Data enthusiast, skier, hiker, can't get enough of cat</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,13 +52,35 @@
         <!-- contact with new modal -->
         <a data-modal-target="#modal-contact" href="#">Contact</a>
         <div class="modal" id="modal-contact">
-            <div class="modal-header">
-                <div class="title">Contact</div>
-            </div>
             <div class="modal-body">
-                <form>
-                    ???
-                </form>
+                <div class="container">
+                    <div class="profile-body">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div id="contact-title">Contact</div>
+                            </div>
+                            <div clas="contact-info" id="lu-contact">
+                                <p><strong>Name:</strong>&nbsp; Lyons Lu</p>
+                                <p><strong>Contact Info:</strong>&nbsp;
+                                    <a href="mailto:lyons124@uw.edu">lyons124@uw.edu</a><br>
+                                </p>
+                            </div>
+                            <div clas="contact-info" id="zhang-contact">
+                                <p><strong>Name:</strong>&nbsp; Wayne Zhang</p>
+                                <p><strong>Contact Info:</strong>&nbsp;
+                                    <a href="mailto:waynescrown@gmail.com">waynescrown@gmail.com</a><br>
+                                </p>
+                            </div>
+                            <div clas="contact-info" id="mao-contact">
+                                <p><strong>Name:</strong>&nbsp; Cassie Mao</p>
+                                <p><strong>Contact Info:</strong>&nbsp;
+                                    <a href="mailto:anranm@uw.edu">anranm@uw.edu</a><br>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="overlay"></div>
@@ -69,7 +92,7 @@
             <div class="container">
                 <!-- Every col is a day's content -->
                 <div class="welcome">
-                    <h1 class="welcome-title">&nbsp;&nbsp;<a id="datetime"></a><a class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</a>
+                    <h1 class="welcome-title">&nbsp;&nbsp;<em> <p id="current-time"></p></em>  <a class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</a>
                     </h1>
                 </div>
                 <div class="col1">
@@ -219,8 +242,8 @@
                 </div>
 
                 <div class="col2">
-                    <div class="text">
-                        <p><em>August 11</em></p>
+                    <div class="text" >
+                        <p><em id="tomorrow-date"></em></p>
                     </div>
                     <div class="user-defined-pool-sm-2 row" id="row-2">
 
@@ -312,7 +335,7 @@
 
                 <div class="col3">
                     <div class="text">
-                        <p><em>August 12</em></p>
+                        <p><em id="future-date"></em></p>
                     </div>
                     <div class="user-defined-pool-sm-3 row" id="row-3">
 
@@ -488,12 +511,6 @@
             </div>
         </section>
     </main>
-
-    <script>
-        var dt = new Date();
-        document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
-    </script>
-
 </body>
 
 </html>

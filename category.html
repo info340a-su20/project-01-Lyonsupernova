@@ -20,41 +20,68 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script defer src="js/responsive.js"></script>
 </head>
+
 <body>
     <!-- Side nav structure from w3schools: https://www.w3schools.com/howto/howto_js_sidenav.asp -->
     <div id="side-nav" class="side-nav">
-        <a class="nav-item" href="category.html">Category</a>
-        <a class="nav-item" href="calendar.html">Calendar</a>
+        <a class="nav-item nav-title" href="category.html">Category</a>
+        <a class="nav-item nav-title" href="calendar.html">Calendar</a>
         <!-- profile add with new modal -->
-        <a class="nav-item" data-modal-target="#modal-profile" href="#">Profile</a>
+        <a class="nav-item nav-title" data-modal-target="#modal-profile" href="#">Profile</a>
         <div class="modal" id="modal-profile">
-            <div class="modal-header">
-                <div class="title">Profile</div>
-            </div>
             <div class="modal-body">
-                <div class="container text-center">
-                    <div class="profile-icon">
-                        <img>
-                    </div>
+                <div class="container">
                     <div class="profile-body">
-                        <p>Leroy Jenkins</p>
-                        <p><strong>Institute:</strong>&nbsp; University of Washington Seattle</p>
-                        <p><strong>Major:</strong>&nbsp; Informatics</p>
-                        <p><strong>About:</strong>&nbsp; Data enthusiast, skier, hiker, can't get enough of cat</p>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="title" id="profile-title">Profile</div>
+                            </div>
+                            <div class="profile-icon">
+                                <img id="profile-image" src="img/penguin.jpeg" alt="cutie penguine"></img>
+                            </div>
+                            <p><strong>Name:</strong>&nbsp; Leroy Jenkins</p>
+                            <p><strong>Institute:</strong>&nbsp; University of Washington Seattle</p>
+                            <p><strong>Major:</strong>&nbsp; Informatics</p>
+                            <p><strong>About:</strong>&nbsp; Data enthusiast, skier, hiker, can't get enough of cat</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="overlay"></div>
         <!-- contact with new modal -->
-        <a class="nav-item" data-modal-target="#modal-contact" href="#">Contact</a>
+        <a class="nav-item nav-title" data-modal-target="#modal-contact" href="#">Contact</a>
         <div class="modal" id="modal-contact">
-            <div class="modal-header">
-                <div class="title">Contact</div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="profile-body">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div id="contact-title">Contact</div>
+                            </div>
+                            <div clas="contact-info" id="lu-contact">
+                                <p><strong>Name:</strong>&nbsp; Lyons Lu</p>
+                                <p><strong>Contact Info:</strong>&nbsp;
+                                    <a href="mailto:lyons124@uw.edu">lyons124@uw.edu</a><br>
+                                </p>
+                            </div>
+                            <div clas="contact-info" id="zhang-contact">
+                                <p><strong>Name:</strong>&nbsp; Wayne Zhang</p>
+                                <p><strong>Contact Info:</strong>&nbsp;
+                                    <a href="mailto:waynescrown@gmail.com">waynescrown@gmail.com</a><br>
+                                </p>
+                            </div>
+                            <div clas="contact-info" id="mao-contact">
+                                <p><strong>Name:</strong>&nbsp; Cassie Mao</p>
+                                <p><strong>Contact Info:</strong>&nbsp;
+                                    <a href="mailto:anranm@uw.edu">anranm@uw.edu</a><br>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <form>
-                ???
-            </form>
         </div>
         <div class="overlay"></div>
     </div>
@@ -64,7 +91,8 @@
         <section>
             <div class="container">
                 <div class="centered">
-                    <h1 class="welcome-title"><strong>Today </strong><a id="datetime"></a><p class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</p>
+                    <h1 class="welcome-title"><strong>Today </strong><a id="datetime"></a>
+                        <p class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</p>
                     </h1>
                 </div>
 
