@@ -173,7 +173,7 @@ function renderCard(modal, i){
   cardTitleElem.textContent = modal.EventName;
   hostElem.innerHTML = "<strong>Host: </strong>" + modal.HostName;
   toDoElem.innerHTML = "<strong>To Do List: </strong>" + modal.ToDoList;
-  zoomElem.innerHTML = "<strong>Zoom Link: </strong>" + "<a href=&quot;" + modal.ZoomLink + "&quot;>" + modal.ZoomLink + "</a>"; 
+  zoomElem.innerHTML = "<strong>Zoom Link: </strong>" + "<a href=&quot;" + modal.ZoomLink + "&quot;>" + modal.ZoomLink + "</a>";
   imgElem.src = modal.ImageSource;
   imgElem.alt = modal.EventName;
 }

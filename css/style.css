@@ -171,7 +171,7 @@ main {
 
 .welcome-title {
   margin-top: 35px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   font-size: 26px;
   font-weight: 300;
   line-height: 150%;
@@ -261,8 +261,110 @@ footer {
   padding: 5px;
 }
 .col {
-  margin: 0 10px;
+  margin: 0 15px;
   display: inline-block;
 }
 
 /* Calendar View */
+/* the big flex pool, put all small flex swimmers inside! */
+.user-defined-pool {
+  display: flex;
+  flex-direction: column;
+}
+
+/* small swimming pools with card swimmers inside */
+.user-defined-pool-sm-1, .user-defined-pool-sm-2, .user-defined-pool-sm-3 {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.calendar-item {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.calendar-item img {
+  width: 210px;
+  height: 150px;
+}
+
+.subtitle {
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+span {
+  background-color: white;
+  font-size: 18px;
+}
+
+/* every event like meet up with tim!*/
+.tim, .cse351, .info340, .info340-group, .math381, .sam, .marc, .dogpaws, .lenora {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 150px;
+  background-size: 210px 150px;
+  background-repeat: no-repeat;
+  border: solid rgb(102, 62, 62) 2px;
+}
+
+/* upload with tim's image */
+.tim {
+  background-image: url(../img/tim.png);
+}
+
+/* upload with cse351 image*/
+.cse351 {
+  background-image: url(../img/cse351.jpg);
+}
+
+.info340 {
+  background-image: url(../img/info340.png);
+}
+
+.info340-group {
+  background-image: url(../img/Info340-group.jpg);
+}
+
+.math381 {
+  background-image: url(../img/math381.png);
+}
+
+.sam {
+  background-image: url(../img/sam.png);
+}
+
+.marc {
+  background-image: url(../img/marc.png);
+}
+
+.dogpaws {
+  background-image: url(../img/dogpaws.jpeg);
+}
+
+.lenora {
+  background-image: url(../img/7lenora.png);
+}
+.text{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 32px;
+}
+/* the event name like cse351! */
+.content {
+  width: 900px;
+  height: 150px;
+  align-self: center;
+  background-color: white;
+  padding-left: 1.5rem;
+  border: solid rgb(102, 62, 62) 2px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
