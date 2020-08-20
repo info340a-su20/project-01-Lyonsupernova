@@ -24,11 +24,10 @@
 <body>
     <!-- Side nav structure from w3schools: https://www.w3schools.com/howto/howto_js_sidenav.asp -->
     <div id="side-nav" class="side-nav">
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-        <a href="category.html">Category</a>
-        <a href="calendar.html">Calendar</a>
+        <a class="nav-item" href="category.html">Category</a>
+        <a class="nav-item" href="calendar.html">Calendar</a>
         <!-- profile add with new modal -->
-        <a data-modal-target="#modal-profile" href="#">Profile</a>
+        <a class="nav-item" data-modal-target="#modal-profile" href="#">Profile</a>
         <div class="modal" id="modal-profile">
             <div class="modal-body">
                 <div class="container">
@@ -51,7 +50,7 @@
         </div>
         <div class="overlay"></div>
         <!-- contact with new modal -->
-        <a data-modal-target="#modal-contact" href="#">Contact</a>
+        <a class="nav-item" data-modal-target="#modal-contact" href="#">Contact</a>
         <div class="modal" id="modal-contact">
             <div class="modal-body">
                 <div class="container">
@@ -86,6 +85,7 @@
         </div>
         <div class="overlay"></div>
     </div>
+
     <!-- Use any element to open the sidenav -->
     <!-- <span onclick="openNav()">open</span> -->
     <main id="main">
@@ -97,7 +97,50 @@
                     </h1>
                 </div>
                 <div class="col1">
-                    <h2 class="subtitle">Today</h2>
+                    
+                    <!-- the add on button to add a new event to calendar view -->
+                    <div class="row" id="row-sec-1">
+                        <h2 class="section-title">Today</h2>
+                        <button class="add-button" data-modal-target="#modal-today-button">
+                            add meeting
+                        </button>
+                    <div class="modal" id="modal-today-button">
+                        <div class="modal-header">
+                            <div class="title">Add a new event?</div>
+                        </div>
+                        <div class="modal-body" id="modal-body-1">
+
+                            <div>
+                                <label for="event-name">Event Name:</label>
+                                <input placeHolder="Info" id="event-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="host-name">Host Name:</label>
+                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="zoom-link">Zoom Link:</label>
+                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                    type=text></input>
+                            </div>
+                            <div>
+                                <label for="to-do-list">To Do List:</label>
+                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                            </div>
+                            <div>
+                                <label for="source">Image Source:</label>
+                                <input placeHolder="Default image" id="source" type="textarea"></input>
+                            </div>
+                            <div>
+                                <label for="source">Time:</label>
+                                <input placeHolder="Example Format: 8:00-9:00AM" id="date" type="textarea"></input>
+                            </div>
+                            <button data-close-button class="submit" id="submit-button-1">submit</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                    </div>
+
                     <div class="user-defined-pool-sm-1 row" id="row-1">
                         <!-- tim's office hour card -->
                         <div class="card">
@@ -148,8 +191,6 @@
                             <div data-modal-target="#modal-cse351" class="content">Cse351</div>
                         </div>
 
-
-
                         <!-- Info340 card -->
                         <div class="card">
                             <div class="modal" id="modal-info340-tomorrow">
@@ -173,9 +214,6 @@
                             </div>
                             <div data-modal-target="#modal-info340-tomorrow" class="content">Info340</div>
                         </div>
-
-
-
 
                         <!-- Info340 group meeting-->
                         <div class="card">
@@ -202,44 +240,6 @@
                         </div>
                     </div>
 
-
-                    <!-- the add on button to add a new event to calendar view -->
-                    <button class="add-button" data-modal-target="#modal-today-button">+</button>
-                    <div class="modal" id="modal-today-button">
-                        <div class="modal-header">
-                            <div class="title">Add a new event?</div>
-                        </div>
-                        <div class="modal-body" id="modal-body-1">
-
-                            <div>
-                                <label for="event-name">Event Name:</label>
-                                <input placeHolder="Info" id="event-name" type=text></input>
-                            </div>
-                            <div>
-                                <label for="host-name">Host Name:</label>
-                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
-                            </div>
-                            <div>
-                                <label for="zoom-link">Zoom Link:</label>
-                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
-                                    type=text></input>
-                            </div>
-                            <div>
-                                <label for="to-do-list">To Do List:</label>
-                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
-                            </div>
-                            <div>
-                                <label for="source">Image Source:</label>
-                                <input placeHolder="Default image" id="source" type="textarea"></input>
-                            </div>
-                            <div>
-                                <label for="source">Time:</label>
-                                <input placeHolder="Example Format: 8:00-9:00AM" id="date" type="textarea"></input>
-                            </div>
-                            <button data-close-button class="submit" id="submit-button-1">submit</button>
-                        </div>
-                    </div>
-                    <div class="overlay"></div>
                 </div>
 
                 <div class="col2">
