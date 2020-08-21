@@ -137,3 +137,43 @@ editButtons.forEach(button => {
     
   })
 })
+
+
+const modalFlags = [
+  "modal-info340", 
+  "modal-cse351",
+  "modal-math381",
+  "modal-sam",
+  "modal-tim",
+  "modal-marc",
+  "modal-dog",
+  "modal-7L",
+  "modal-lyons"
+]
+
+let index = 0;
+let getJSONForData = $.getJSON('data/data.json', function (data) {
+  data.forEach(card => {
+    console.log(card);
+    renderCard(card, index);
+    index++;
+  })
+})
+
+
+function renderCard(modal, i){
+  let modalID = "#" + modalFlags[i];
+  let titleElem = document.querySelector(modalID + ' .title');
+  let hostElem  = document.querySelector(modalID + ' .host');
+  let zoomElem  = document.querySelector(modalID + ' .zoom');
+  let toDoElem  = document.querySelector(modalID + ' .toDo');
+  let imgElem = document.querySelector(modalID).parentElement.children[2];
+  let cardTitleElem  = document.querySelector(modalID).parentElement.children[3];
+  titleElem.textContent = modal.EventName;
+  cardTitleElem.textContent = modal.EventName;
+  hostElem.innerHTML = "<strong>Host: </strong>" + modal.HostName;
+  toDoElem.innerHTML = "<strong>To Do List: </strong>" + modal.ToDoList;
+  zoomElem.innerHTML = "<strong>Zoom Link: </strong>" + "<a href=&quot;" + modal.ZoomLink + "&quot;>" + modal.ZoomLink + "</a>";
+  imgElem.src = modal.ImageSource;
+  imgElem.alt = modal.EventName;
+}

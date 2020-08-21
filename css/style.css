@@ -1,0 +1,370 @@
+/* General Structure */
+*, *::after, *::before {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+.container {
+  margin: 0 3rem;
+}
+.row {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+body {
+  background-color: #ebfafa;
+}
+main {
+  margin-left: 10rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 450px) {
+  .side-nav {
+    width: 100%;
+  }
+  .side-nav a {
+    font-size: 13px;
+  }
+  .container {
+    margin: 1rem;
+  }
+  img {
+    display: none;
+  }
+  .card .card-title {
+    text-align: center;
+    margin-top: 5rem;
+    background-image: url(../)
+  }
+}
+
+/* side nav */
+.side-nav {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  width: 10rem;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #223F3F;
+  /* Black */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 20px;
+  display: flex;
+  /* space evenly the text */
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.nav-item {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 8px 20px;
+  width: auto;
+  text-decoration: none;
+  font-size: 20px;
+  color: #c7c7c7;
+  display: block;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  padding: 0;
+}
+.nav-item:hover {
+  background-color: black;
+  color: white;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+ /* profile image */
+#profile-image {
+  width: 70px;
+  height: 70px;
+}
+
+#profile-title, #contact-title{
+  font-size: 28px;
+}
+
+.profile-body{
+  text-align: center;
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  max-width: 80%;
+}
+
+.modal-content{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.modal-header{
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.modal-body {
+  padding: 10px 15px;
+}
+.overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Main content */
+.centered {
+  text-align: center;
+}
+
+.welcome-title {
+  margin-top: 35px;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 150%;
+}
+.welcome-title strong {
+  font-weight: 500;
+}
+.welcome-person {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  color: #223F3F;
+}
+
+.section-title {
+  text-transform: uppercase;
+  /* text-decoration: underline; */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  margin-right: 25px;
+  letter-spacing: 2px;
+}
+
+/* Cards */
+
+/* card view add with border */
+.card {
+  border: 2px solid rgb(102, 62, 62);
+  width: 214px;
+  min-height: 200px;
+  margin-right: 75px;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 2px rgb(170, 170, 170);
+  background-color: white;
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 5px 2px 2px rgb(75, 45, 45);
+  transition: 0.5s;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 8px;
+}
+.card img {
+  /* display: block; */
+  width: 210px;
+  height: 150px;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(102, 62, 62);
+}
+
+/* Buttons */
+button {
+  padding: 6px 18px;
+  border: none;
+  background-color: #3d3d3d;
+  color: white;
+  text-transform: capitalize;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+button:hover {
+  background-color: black;
+  font-weight: 500;
+  transition: 0.3s;
+  box-shadow: 2px 2px 2px #3d2727;
+}
+
+/* Footer */
+footer {
+  margin: 50px 10px;
+  border-top: solid 2px #6e6e6e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-title {
+  margin-top: 30px;
+  font-weight: 400;
+}
+.name {
+  padding: 5px;
+}
+.col {
+  margin: 0 15px;
+  display: inline-block;
+}
+
+/* Calendar View */
+/* the big flex pool, put all small flex swimmers inside! */
+.user-defined-pool {
+  display: flex;
+  flex-direction: column;
+}
+
+/* small swimming pools with card swimmers inside */
+.user-defined-pool-sm-1, .user-defined-pool-sm-2, .user-defined-pool-sm-3 {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.calendar-item {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.calendar-item img {
+  width: 210px;
+  height: 150px;
+}
+
+.subtitle {
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+span {
+  background-color: white;
+  font-size: 18px;
+}
+
+/* every event like meet up with tim!*/
+.tim, .cse351, .info340, .info340-group, .math381, .sam, .marc, .dogpaws, .lenora {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 150px;
+  background-size: 210px 150px;
+  background-repeat: no-repeat;
+  border: solid rgb(102, 62, 62) 2px;
+}
+
+/* upload with tim's image */
+.tim {
+  background-image: url(../img/tim.png);
+}
+
+/* upload with cse351 image*/
+.cse351 {
+  background-image: url(../img/cse351.jpg);
+}
+
+.info340 {
+  background-image: url(../img/info340.png);
+}
+
+.info340-group {
+  background-image: url(../img/Info340-group.jpg);
+}
+
+.math381 {
+  background-image: url(../img/math381.png);
+}
+
+.sam {
+  background-image: url(../img/sam.png);
+}
+
+.marc {
+  background-image: url(../img/marc.png);
+}
+
+.dogpaws {
+  background-image: url(../img/dogpaws.jpeg);
+}
+
+.lenora {
+  background-image: url(../img/7lenora.png);
+}
+.text{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 32px;
+}
+/* the event name like cse351! */
+.content {
+  width: 900px;
+  height: 150px;
+  align-self: center;
+  background-color: white;
+  padding-left: 1.5rem;
+  border: solid rgb(102, 62, 62) 2px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
