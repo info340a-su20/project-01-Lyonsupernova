@@ -80,9 +80,9 @@ function insert(event) {
   rowElem.insertBefore(cardElem, addButton);
   document.querySelector("#card-new .card-title").textContent = eventNameInput;
   document.querySelector("#card-new .title").textContent = eventNameInput;
-  document.querySelector("#card-new .host").textContent = "Host: " + hostNameInput;
-  document.querySelector("#card-new .zoom").textContent = "Zoom Link: " + zoomLinkInput;
-  document.querySelector("#card-new .toDo").textContent = "To do List: " + toDoListInput;
+  document.querySelector("#card-new .host").innerHTML = "<strong>Host: </strong>" + hostNameInput;
+  document.querySelector("#card-new .zoom").innerHTML = "<strong>Zoom Link: </strong><a href=\"" + zoomLinkInput + "\">" + zoomLinkInput + "</a>";
+  document.querySelector("#card-new .toDo").innerHTML = "<strong>To do List: </strong>" + toDoListInput;
   let modalName = 'modal-' + eventNameInput.replace(/\s+/g, '-').toLowerCase();
   document.querySelector("#card-new .modal").id = modalName;
   document.querySelector('#card-new h3').removeAttribute('data-modal-target')

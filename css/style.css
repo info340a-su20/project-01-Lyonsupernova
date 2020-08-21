@@ -17,9 +17,8 @@
   padding: 10px 0;
   display: flex;
   align-items: center;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }
+
 @media only screen and (max-width: 450px) {
   .row {
     overflow-x: none;
@@ -140,9 +139,9 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 }
 
 .modal-content{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal.active {
@@ -166,9 +165,7 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   font-size: 1.25rem;
   font-weight: bold;
 }
-.modal-body {
-  padding: 50px 70px;
-}
+
 .toDo {
   margin-bottom: 20px;
 }
@@ -241,7 +238,6 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   box-shadow: 2px 2px 2px rgb(170, 170, 170);
   background-color: white;
   text-align: center;
-  overflow: scroll;
 }
 .card:hover {
   box-shadow: 5px 2px 2px rgb(75, 45, 45);

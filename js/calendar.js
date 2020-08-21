@@ -44,7 +44,7 @@ function closeModal(modal) {
 let deleteButtons = document.querySelectorAll('.delete');
 deleteButtons.forEach(button => {
   button.addEventListener('click', () => {
-    let rowElem = button.closest(".row");
+    let rowElem = button.closest(".row-main");
     let cardNestedElem = button.closest('.calendar-item');
     rowElem.removeChild(cardNestedElem);
   })
@@ -78,7 +78,7 @@ const convertTime12to24 = (time12h) => {
 function sortTime(i) {
   // 1. set time to each card
   let arrayCardTime = [];
-  let timeCardElem = document.querySelectorAll('#row-' + i + ' .time-card'); // select a time card element
+  let timeCardElem = document.querySelectorAll('#row-main-' + i + ' .time-card'); // select a time card element
   timeCardElem.forEach(timeCard => {
     let cardElem = timeCard.parentElement; // get parent card element
     let cardTime = timeCard.textContent.replace(/\s+/g, '').toUpperCase(); // get time from each card
@@ -94,7 +94,7 @@ function sortTime(i) {
   // 3. sorting according to time 
   arrayCardTime.sort((a, b) => (a.time > b.time) ? 1 : -1)
   // 4. use insert before / after to implement 
-  let row1Elem = document.querySelector('#row-' + i);
+  let row1Elem = document.querySelector('#row-main-' + i);
   row1Elem.innerHTML = '' //  clear out the row-1 inner html
   for (let i = 0; i < arrayCardTime.length; i++) { // insert the card one by one from arrayCardTime
     row1Elem.appendChild(arrayCardTime[i].card);
@@ -115,7 +115,7 @@ submitButtons.forEach(element => {
 })
 // insert
 function insert(event) {
-  let rowElem = document.querySelector('#row-' + event.target.id.slice(-1));
+  let rowElem = document.querySelector('#row-main-' + event.target.id.slice(-1));
   let cardElem = document.querySelector('.calendar-item').cloneNode(true);
   cardElem.id = "card-new";
   let modayBodyName = event.target.parentElement.id;
@@ -242,6 +242,11 @@ function renderCard(modal, i){
   titleElem.textContent = modal.EventName;
   hostElem.innerHTML = "<strong>Host: </strong>" + modal.HostName;
   toDoElem.innerHTML = "<strong>To Do List: </strong>" + modal.ToDoList;
-  zoomElem.innerHTML = "<strong>Zoom Link: </strong>" + "<a href=&quot;" + modal.ZoomLink + "&quot;>" + modal.ZoomLink + "</a>"; 
+
+  let zoomLinkElem = document.createElement("a");
+  zoomLinkElem.setAttribute('href', modal.ZoomLink);
+  zoomLinkElem.textContent = modal.ZoomLink;
+  zoomElem.innerHTML =  "<strong>Zoom: </strong>";
+  zoomElem.appendChild(zoomLinkElem);
   textElem.textContent= modal.EventName;
 }
