@@ -4,85 +4,101 @@
   font-family: 'Roboto', sans-serif;
 }
 .container {
-  margin: 0 3rem;
+  margin: 0 50px;
+}
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
 }
 .row {
+  width: 100%;
   padding: 10px 0;
   display: flex;
   align-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
 }
+@media only screen and (max-width: 450px) {
+  .row {
+    overflow-x: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
 body {
   background-color: #ebfafa;
+  margin: 0;
 }
 main {
-  margin-left: 10rem;
+  margin-left: 10px;
 }
 
-/* Responsive */
-@media screen and (max-width: 450px) {
-  .side-nav {
-    width: 100%;
-  }
-  .side-nav a {
-    font-size: 13px;
-  }
-  .container {
-    margin: 1rem;
-  }
-  img {
-    display: none;
-  }
-  .card .card-title {
-    text-align: center;
-    margin-top: 5rem;
-    background-image: url(../)
-  }
-}
+/* The below responsive navbar code is from w3school
+https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
-/* side nav */
-.side-nav {
-  height: 100%;
-  /* Full-height: remove this if you want "auto" height */
-  width: 10rem;
-  /* Set the width of the sidebar */
-  position: fixed;
-  /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
+/* Add a black background color to the top navigation */
+.topnav {
   background-color: #223F3F;
-  /* Black */
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 20px;
-  display: flex;
-  /* space evenly the text */
-  flex-direction: column;
-  justify-content: space-evenly;
+  overflow: hidden;
+  padding: 0 50px;
 }
-.nav-item {
-  font-weight: 300;
-  text-transform: uppercase;
-  margin: 8px 20px;
-  width: auto;
-  text-decoration: none;
-  font-size: 20px;
-  color: #c7c7c7;
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
   display: block;
-  text-decoration: underline;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 22px 28px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0 20px;
   letter-spacing: 1px;
-  padding: 0;
+  text-transform: uppercase;
 }
-.nav-item:hover {
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #222222;
+  color: white;
+  transition: 0.5s
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
   background-color: black;
   color: white;
-  font-weight: 400;
-  transition: 0.3s;
 }
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
 
  /* profile image */
 #profile-image {
@@ -116,6 +132,7 @@ main {
   width: 50%;
   height: 50%;
   max-width: 80%;
+  align-items: center;
 }
 
 .modal-content{
@@ -164,6 +181,7 @@ main {
   pointer-events: all;
 }
 
+
 /* Main content */
 .centered {
   text-align: center;
@@ -185,7 +203,6 @@ main {
   font-size: 24px;
   color: #223F3F;
 }
-
 .section-title {
   text-transform: uppercase;
   /* text-decoration: underline; */
@@ -197,17 +214,18 @@ main {
 }
 
 /* Cards */
-
-/* card view add with border */
+/* Card view add with border */
 .card {
   border: 2px solid rgb(102, 62, 62);
   width: 214px;
-  min-height: 200px;
+  min-width: 214px;
+  height: 200px;
   margin-right: 75px;
   margin-bottom: 30px;
   box-shadow: 2px 2px 2px rgb(170, 170, 170);
   background-color: white;
   text-align: center;
+  overflow: scroll;
 }
 .card:hover {
   box-shadow: 5px 2px 2px rgb(75, 45, 45);
@@ -215,16 +233,30 @@ main {
 }
 
 .card-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  margin-top: 8px;
+  margin-top: 0.9rem;
 }
 .card img {
-  /* display: block; */
+  display: block;
   width: 210px;
   height: 150px;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid rgb(102, 62, 62);
+}
+/* Responsive */
+@media screen and (max-width: 450px) {
+  .container {
+    margin: 0.5rem;
+  }
+  img {
+    display: none;
+  }
+  .card .card-title {
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    background-image: url(../)
+  }
 }
 
 /* Buttons */
@@ -243,10 +275,23 @@ button:hover {
   transition: 0.3s;
   box-shadow: 2px 2px 2px #3d2727;
 }
+@media screen and (max-width: 450px) {
+  .container {
+    margin: 0.5rem;
+  }
+  img {
+    display: none;
+  }
+  .card .card-title {
+    text-align: center;
+    margin: 0.5rem 0.5rem;
+    background-image: url(../)
+  }
+}
 
 /* Footer */
 footer {
-  margin: 50px 10px;
+  margin: 50px 10px 25px 10px;
   border-top: solid 2px #6e6e6e;
   display: flex;
   flex-wrap: wrap;
@@ -267,6 +312,7 @@ footer {
 
 /* Calendar View */
 /* the big flex pool, put all small flex swimmers inside! */
+
 .user-defined-pool {
   display: flex;
   flex-direction: column;
@@ -367,4 +413,8 @@ span {
   align-items: center;
   font-size: 24px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+@media screen and (max-width: 700px) {
+
 }

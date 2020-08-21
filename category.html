@@ -19,12 +19,15 @@
     <!-- JS for card view -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script defer src="js/responsive.js"></script>
+    <script defer src="js/nav.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <!-- Side nav structure from w3schools: https://www.w3schools.com/howto/howto_js_sidenav.asp -->
-    <div id="side-nav" class="side-nav">
+    <div id="myTopnav" class="topnav">
         <a class="nav-item nav-title" href="category.html">Category</a>
         <a class="nav-item nav-title" href="calendar.html">Calendar</a>
         <!-- profile add with new modal -->
@@ -84,8 +87,12 @@
                 </div>
             </div>
         </div>
-        <div class="overlay"></div>
+        <div class="overlay"></div><a href="javascript:void(0);" class="icon" onclick="funcOne()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
+
+
 
     <!-- Use any element to open the sidenav -->
     <!-- <span onclick="openNav()">open</span> -->
@@ -100,7 +107,7 @@
                 <div class="row" id="row-sec-1">
                     <h2 class="section-title">Lecture</h2>
                     <button data-modal-target="#modal-edit-button-1" class="edit">
-                        edit category name
+                        edit name
                     </button>
                     <div class="modal" id="modal-edit-button-1">
                         <div class="modal-header">
@@ -116,7 +123,6 @@
                 </div>
 
                 <div class="row" id="row-1">
-
                     <!-- INFO340 card-->
                     <div class="card">
                         <div class="modal" id="modal-info340">
@@ -135,8 +141,6 @@
                         <img data-modal-target="#modal-info340">
                         <h3 class="card-title" data-modal-target="#modal-info340"></h3>
                     </div>
-
-
                     <!-- CSE351 card-->
                     <div class="card">
                         <div class="modal" id="modal-cse351">
@@ -178,7 +182,6 @@
                     <button class="add-button" data-modal-target="#modal-lecture-button">
                         Add<br>meeting
                     </button>
-
                     <div class="modal" id="modal-lecture-button">
                         <div class="modal-header">
                             <div class="title">Add a new event?</div>
@@ -212,12 +215,13 @@
                         </div>
                     </div>
                     <div class="overlay"></div>
+                    
                 </div>
 
                 <div class="row" id="row-sec-2">
                     <h2 class="section-title">Office Hour</h2>
                     <button data-modal-target="#modal-edit-button-1" class="edit">
-                        edit category name
+                        edit name
                     </button>
                     <div class="modal" id="modal-edit-button-2">
                         <div class="modal-header">
@@ -329,7 +333,7 @@
                 <div class="row" id="row-sec-3">
                     <h2 class="section-title">Group Meeting</h2>
                     <button data-modal-target="#modal-edit-button-1" class="edit">
-                        edit category name
+                        edit name
                     </button>
                     <div class="modal" id="modal-edit-button-3">
                         <div class="modal-header">
@@ -456,6 +460,18 @@
         var dt = new Date();
         document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
     </script>
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function funcOne() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
 
 </body>
 
