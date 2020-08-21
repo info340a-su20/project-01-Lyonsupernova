@@ -19,6 +19,7 @@
     <!-- load js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script defer src="js/calendar.js"></script>
+    <script defer src="js/nav.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
@@ -99,227 +100,19 @@
                     <em><a id="current-time"></a></em>
                     <p class="welcome-person">Welcome&nbsp;back,&nbsp;Stella</p>
                 </h1>
-                    <!-- the add on button to add a new event to calendar view -->
-                    <div class="row">
-                        <h2 class="section-title">Today</h2>
-                        <button class="add-button" data-modal-target="#modal-today-button">
-                            add meeting
-                        </button>
-                        <div class="modal" id="modal-today-button">
-                            <div class="modal-header">
-                                <div class="title">Add a new event?</div>
-                            </div>
-                            <div class="modal-body" id="modal-body-1">
 
-                                <div>
-                                    <label for="event-name">Event Name:</label>
-                                    <input placeHolder="Info" id="event-name" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="host-name">Host Name:</label>
-                                    <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="zoom-link">Zoom Link:</label>
-                                    <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
-                                        type=text></input>
-                                </div>
-                                <div>
-                                    <label for="to-do-list">To Do List:</label>
-                                    <input placeHolder="Final Project" id="to-do-list" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="source">Image Source:</label>
-                                    <input placeHolder="Default image" id="source" type="textarea"></input>
-                                </div>
-                                <div>
-                                    <label for="time">Start Time:</label>
-                                    <input id="start-time" type="time"></input>
-                                </div>
-                                <div>
-                                    <label for="time">End Time:</label>
-                                    <input id="end-time" type="time"></input>
-                                </div>
-                                <button data-close-button class="submit" id="submit-button-1">submit</button>
-                            </div>
-                        </div>
-                        <div class="overlay"></div>
-                    </div>
-
-                    <div class="user-defined-pool-sm-1 row" id="row-1">
-                        <!-- tim's office hour card -->
-                        <div class="calendar-item">
-                            <div class="modal" id="modal-tim">
-                                <div class="modal-header">
-                                    <div class="title"></div>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="host"></div>
-                                    <div class="zoom">
-                                    </div>
-                                    <div class="toDo"></div>
-                                    <button class="delete">delete</button>
-                                </div>
-                            </div>
-                            <div class="overlay"></div>
-                            <div data-modal-target="#modal-tim" class="tim time-card">
-                                <div class="time">
-                                    <span>9:30-10:30AM</span>
-                                </div>
-                            </div>
-                            <div data-modal-target="#modal-tim" class="content"></div>
-                        </div>
-                    </div>
-                        <!-- tim's office hour card -->
-                        
-
-                        <!-- cse351 card -->
-                        <div class="calendar-item">
-                            <div class="modal" id="modal-cse351">
-                                <div class="modal-header">
-                                    <div class="title"></div>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="host"></div>
-                                    <div class='zoom'>
-                                    </div>
-                                    <div class='toDo'></div>
-                                    <button class="delete">delete</button>
-                                </div>
-                            </div>
-                            <div class="overlay"></div>
-                            <div data-modal-target="#modal-cse351" class="cse351 time-card">
-                                <div class="time">
-                                    <span>10:50-11:50AM</span>
-                                </div>
-                            </div>
-                            <div data-modal-target="#modal-cse351" class="content"></div>
-                        </div>
-
-                        <!-- Info340 card -->
-                        <div class="calendar-item">
-                            <div class="modal" id="modal-info340-tomorrow">
-                                <div class="modal-header">
-                                    <div class="title"></div>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="host"></div>
-                                    <div class="zoom">
-                                    </div>
-                                    <div class="toDo"></div>
-                                    <button class="delete">delete</button>
-                                </div>
-                            </div>
-                            <div class="overlay"></div>
-                            <div data-modal-target="#modal-info340-tomorrow" class="info340 time-card">
-                                <div class="time">
-                                    <span>1:00-4:00PM</span>
-                                </div>
-                            </div>
-                            <div data-modal-target="#modal-info340-tomorrow" class="content"></div>
-                        </div>
-                    
-
-
-                <div class="col">
-                    <div class="text">
-                        <p><em id="tomorrow-date"></em></p>
-                    </div>
-                    <div id="row-sec-1">
-                        <button class="add-button" data-modal-target="#modal-today-button">
-                            add meeting
-                        </button>
-                        <div class="modal" id="modal-today-button">
-                            <div class="modal-header">
-                                <div class="title">Add a new event?</div>
-                            </div>
-                            <div class="modal-body" id="modal-body-1">
-
-                                <div>
-                                    <label for="event-name">Event Name:</label>
-                                    <input placeHolder="Info" id="event-name" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="host-name">Host Name:</label>
-                                    <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="zoom-link">Zoom Link:</label>
-                                    <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
-                                        type=text></input>
-                                </div>
-                                <div>
-                                    <label for="to-do-list">To Do List:</label>
-                                    <input placeHolder="Final Project" id="to-do-list" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="source">Image Source:</label>
-                                    <input placeHolder="Default image" id="source" type="textarea"></input>
-                                </div>
-                                <div>
-                                    <label for="source">Time:</label>
-                                    <input placeHolder="Example Format: 8:00-9:00AM" id="date" type="textarea"></input>
-                                </div>
-                                <button data-close-button class="submit" id="submit-button-1">submit</button>
-                            </div>
-                        </div>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="user-defined-pool-sm-2 row" id="row-2">
-
-                        <!-- Math381-->
-                        <div class="calendar-item">
-                            <div class="modal" id="modal-math381">
-                                <div class="modal-header">
-                                    <div class="title"></div>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="host"></div>
-                                    <div class="zoom">
-                                    </div>
-                                    <div class="toDo"></div>
-                                    <button class="delete">delete</button>
-                                </div>
-                            </div>
-                            <div class="overlay"></div>
-                            <div data-modal-target="#modal-math381" class="math381 time-card">
-                                <div class="time">
-                                    <span>9:40-10:40AM</span>
-                                </div>
-                            </div>
-                            <div data-modal-target="#modal-math381" class="content"></div>
-                        </div>
-                        <!-- info340 card -->
-
-                        <div class="calendar-item">
-                            <div class="modal" id="modal-info340-future">
-                                <div class="modal-header">
-                                    <div class="title"></div>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="host"></div>
-                                    <div class="zoom">
-                                    </div>
-                                    <div class="toDo"></div>
-                                    <button class="delete">delete</button>
-                                </div>
-                            </div>
-                            <div class="overlay"></div>
-                            <div data-modal-target="#modal-info340-future" class="info340 time-card">
-                                <div class="time">
-                                    <span>1:00-4:00PM</span>
-                                </div>
-                            </div>
-                            <div data-modal-target="#modal-info340-future" class="content"></div>
-                        </div>
-                    </div>
-                    <!-- the add on button to add a new event to calendar view -->
-                    <button class="add-button" data-modal-target="#modal-tomorrow-button">+</button>
-                    <div class="modal" id="modal-tomorrow-button">
+                <div class="row">
+                    <h2 class="section-title">Today</h2>
+                    <button class="add-button" data-modal-target="#modal-today-button">
+                        add meeting
+                    </button>
+                    <!-- button modal -->
+                    <div class="modal" id="modal-today-button">
                         <div class="modal-header">
                             <div class="title">Add a new event?</div>
                         </div>
-                        <div class="modal-body" id="modal-body-2">
+                        <div class="modal-body" id="modal-body-1">
+
                             <div>
                                 <label for="event-name">Event Name:</label>
                                 <input placeHolder="Info" id="event-name" type=text></input>
@@ -348,161 +141,352 @@
                             <div>
                                 <label for="time">End Time:</label>
                                 <input id="end-time" type="time"></input>
-                                <button data-close-button class="submit" id="submit-button-2">submit</button>
+                            </div>
+                            <button data-close-button class="submit" id="submit-button-1">submit</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+                
+                <!-- tim's office hour card -->
+                <div class="row">
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-tim">
+                            <div class="modal-header">
+                                <div class="title"></div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class="zoom">
+                                </div>
+                                <div class="toDo"></div>
+                                <button class="delete">delete</button>
                             </div>
                         </div>
                         <div class="overlay"></div>
+                        <div data-modal-target="#modal-tim" class="tim time-card">
+                            <div class="time">
+                                <span>9:30-10:30AM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-tim" class="content"></div>
                     </div>
-
-                    <div class="col">
-                        <div class="text">
-                            <p><em id="future-date"></em></p>
-                        </div>
-                        <div class="user-defined-pool-sm-3 row" id="row-3">
-
-
-                            <!-- Sam's office hour card -->
-                            <div class="calendar-item">
-                                <div class="modal" id="modal-sam">
-                                    <div class="modal-header">
-                                        <div class="title"></div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="host"></div>
-                                        <div class="zoom">
-                                        </div>
-                                        <div class="toDo"></div>
-                                        <button class="delete">delete</button>
-                                    </div>
-                                </div>
-                                <div class="overlay"></div>
-
-                                <div data-modal-target="#modal-sam" class="sam time-card">
-                                    <div class="time">
-                                        <span>12:00-1:00PM</span>
-                                    </div>
-                                </div>
-                                <div data-modal-target="#modal-sam" class="content"></div>
-                            </div>
-                            <!-- Marc's office hour -->
-                            <div class="calendar-item">
-                                <div class="modal" id="modal-marc">
-                                    <div class="modal-header">
-                                        <div class="title"></div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="host"></div>
-                                        <div class="zoom">
-                                        </div>
-                                        <div class="toDo"></div>
-                                        <button class="delete">delete</button>
-                                    </div>
-                                </div>
-                                <div class="overlay"></div>
-                                <div data-modal-target="#modal-marc" class="marc time-card">
-                                    <div class="time">
-                                        <span>1:30-4:00PM</span>
-                                    </div>
-                                </div>
-                                <div data-modal-target="#modal-marc" class="content"></div>
-                            </div>
-
-                            <div class="row">
-                                <!-- dogpaws meeting -->
-                                <div class="calendar-item">
-                                    <div class="modal" id="modal-dog">
-                                        <div class="modal-header">
-                                            <div class="title"></div>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="host"></div>
-                                            <div class="zoom">
-                                            </div>
-                                            <div class="toDo"></div>
-                                            <button class="delete">delete</button>
-                                        </div>
-                                    </div>
-                                    <div class="overlay"></div>
-                                    <div data-modal-target="#modal-dog" class="dogpaws time-card">
-                                        <div class="time">
-                                            <span>4:30-5:30PM</span>
-                                        </div>
-                                    </div>
-                                    <div data-modal-target="#modal-dog" class="content"></div>
-                                </div>
-                            </div>
-
-                            <!-- 7lenora card -->
-                            <div class="calendar-item">
-                                <div class="modal" id="modal-7L">
-                                    <div class="modal-header">
-                                        <div class="title"></div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="host"></div>
-                                        <div class="zoom">
-                                        </div>
-                                        <div class="toDo"></div>
-                                        <button class="delete"></button>
-                                    </div>
-                                </div>
-                                <div class="overlay"></div>
-                                <div data-modal-target="#modal-7L" class="lenora time-card">
-                                    <div class="time">
-                                        <span>7:00-8:00AM</span>
-                                    </div>
-                                </div>
-                                <div data-modal-target="#modal-7L" class="content"></div>
-                            </div>
-
-
-
-
-                        </div>
-                        <!-- the add on button to add a new event to calendar view -->
-                        <button class="add-button" data-modal-target="#modal-future-button">+</button>
-                        <div class="modal" id="modal-future-button">
+                </div>
+                <!-- cse351 card -->
+                <div class="row">
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-cse351">
                             <div class="modal-header">
-                                <div class="title">Add a new event?</div>
+                                <div class="title"></div>
                             </div>
-                            <div class="modal-body" id="modal-body-3">
-                                <div>
-                                    <label for="event-name">Event Name:</label>
-                                    <input placeHolder="Info" id="event-name" type=text></input>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class='zoom'>
                                 </div>
-                                <div>
-                                    <label for="host-name">Host Name:</label>
-                                    <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="zoom-link">Zoom Link:</label>
-                                    <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
-                                        type=text></input>
-                                </div>
-                                <div>
-                                    <label for="to-do-list">To Do List:</label>
-                                    <input placeHolder="Final Project" id="to-do-list" type=text></input>
-                                </div>
-                                <div>
-                                    <label for="source">Image Source:</label>
-                                    <input placeHolder="Default image" id="source" type="textarea"></input>
-                                </div>
-                                <div>
-                                    <label for="time">Start Time:</label>
-                                    <input id="start-time" type="time"></input>
-                                </div>
-                                <div>
-                                    <label for="time">End Time:</label>
-                                    <input id="end-time" type="time"></input>
-                                    <button data-close-button class="submit" id="submit-button-3">submit</button>
-                                </div>
+                                <div class='toDo'></div>
+                                <button class="delete">delete</button>
                             </div>
-                            <div class="overlay"></div>
+                        </div>
+                        <div class="overlay"></div>
+                        <div data-modal-target="#modal-cse351" class="cse351 time-card">
+                            <div class="time">
+                                <span>10:50-11:50AM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-cse351" class="content"></div>
+                    </div>
+                </div>
 
+                <!-- Info340 card -->
+                <div class="row">
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-info340-tomorrow">
+                            <div class="modal-header">
+                                <div class="title"></div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class="zoom">
+                                </div>
+                                <div class="toDo"></div>
+                                <button class="delete">delete</button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                        <div data-modal-target="#modal-info340-tomorrow" class="info340 time-card">
+                            <div class="time">
+                                <span>1:00-4:00PM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-info340-tomorrow" class="content"></div>
+                    </div>
+                </div>
+
+                <!-- Next day -->
+                <div class="row">
+                    <div class="text">
+                        <h2 class="section-title"><em id="tomorrow-date"></em></h2>
+                    </div>
+                    <button class="add-button" data-modal-target="#modal-today-button">
+                        add meeting
+                    </button>
+                    <!-- button modal -->
+                    <div class="modal" id="modal-today-button">
+                        <div class="modal-header">
+                            <div class="title">Add a new event?</div>
+                        </div>
+                        <div class="modal-body" id="modal-body-1">
+
+                            <div>
+                                <label for="event-name">Event Name:</label>
+                                <input placeHolder="Info" id="event-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="host-name">Host Name:</label>
+                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="zoom-link">Zoom Link:</label>
+                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                    type=text></input>
+                            </div>
+                            <div>
+                                <label for="to-do-list">To Do List:</label>
+                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                            </div>
+                            <div>
+                                <label for="source">Image Source:</label>
+                                <input placeHolder="Default image" id="source" type="textarea"></input>
+                            </div>
+                            <div>
+                                <label for="time">Start Time:</label>
+                                <input id="start-time" type="time"></input>
+                            </div>
+                            <div>
+                                <label for="time">End Time:</label>
+                                <input id="end-time" type="time"></input>
+                            </div>
+                            <button data-close-button class="submit" id="submit-button-1">submit</button>
                         </div>
                     </div>
+                    <div class="overlay"></div>
+                </div>
+
+                <!-- Math381-->
+                <div class="row">
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-math381">
+                            <div class="modal-header">
+                                <div class="title"></div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class="zoom">
+                                </div>
+                                <div class="toDo"></div>
+                                <button class="delete">delete</button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                        <div data-modal-target="#modal-math381" class="math381 time-card">
+                            <div class="time">
+                                <span>9:40-10:40AM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-math381" class="content"></div>
+                    </div>
+                </div>
+                
+                <!-- info340 card -->
+                <div class="row">
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-info340-future">
+                            <div class="modal-header">
+                                <div class="title"></div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class="zoom">
+                                </div>
+                                <div class="toDo"></div>
+                                <button class="delete">delete</button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                        <div data-modal-target="#modal-info340-future" class="info340 time-card">
+                            <div class="time">
+                                <span>1:00-4:00PM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-info340-future" class="content"></div>
+                    </div>
+                </div>
+                
+                <!-- Next day -->
+                <div class="row">
+                    <div class="text">
+                        <h2 class="section-title"><em id="future-date"></em></h2>
+                    </div>
+                    <button class="add-button" data-modal-target="#modal-today-button">
+                        add meeting
+                    </button>
+                    <!-- button modal -->
+                    <div class="modal" id="modal-today-button">
+                        <div class="modal-header">
+                            <div class="title">Add a new event?</div>
+                        </div>
+                        <div class="modal-body" id="modal-body-1">
+
+                            <div>
+                                <label for="event-name">Event Name:</label>
+                                <input placeHolder="Info" id="event-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="host-name">Host Name:</label>
+                                <input placeHolder="Marc Schmalz" id="host-name" type=text></input>
+                            </div>
+                            <div>
+                                <label for="zoom-link">Zoom Link:</label>
+                                <input placeHolder="https://washington.zoom.us/j/2154191712" id="zoom-link"
+                                    type=text></input>
+                            </div>
+                            <div>
+                                <label for="to-do-list">To Do List:</label>
+                                <input placeHolder="Final Project" id="to-do-list" type=text></input>
+                            </div>
+                            <div>
+                                <label for="source">Image Source:</label>
+                                <input placeHolder="Default image" id="source" type="textarea"></input>
+                            </div>
+                            <div>
+                                <label for="time">Start Time:</label>
+                                <input id="start-time" type="time"></input>
+                            </div>
+                            <div>
+                                <label for="time">End Time:</label>
+                                <input id="end-time" type="time"></input>
+                            </div>
+                            <button data-close-button class="submit" id="submit-button-1">submit</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="row">
+                    <!-- Sam's office hour card -->
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-sam">
+                            <div class="modal-header">
+                                <div class="title"></div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class="zoom">
+                                </div>
+                                <div class="toDo"></div>
+                                <button class="delete">delete</button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+
+                        <div data-modal-target="#modal-sam" class="sam time-card">
+                            <div class="time">
+                                <span>12:00-1:00PM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-sam" class="content"></div>
+                    </div>
+                </div>
+                
+                <!-- Marc's office hour -->
+                <div class="row">
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-marc">
+                            <div class="modal-header">
+                                <div class="title"></div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class="zoom">
+                                </div>
+                                <div class="toDo"></div>
+                                <button class="delete">delete</button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                        <div data-modal-target="#modal-marc" class="marc time-card">
+                            <div class="time">
+                                <span>1:30-4:00PM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-marc" class="content"></div>
+                    </div>
+                </div>
+                    
+                <!-- dogpaws meeting -->
+                <div class="row">
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-dog">
+                            <div class="modal-header">
+                                <div class="title"></div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class="zoom">
+                                </div>
+                                <div class="toDo"></div>
+                                <button class="delete">delete</button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                        <div data-modal-target="#modal-dog" class="dogpaws time-card">
+                            <div class="time">
+                                <span>4:30-5:30PM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-dog" class="content"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- 7lenora card -->
+                    <div class="calendar-item">
+                        <div class="modal" id="modal-7L">
+                            <div class="modal-header">
+                                <div class="title"></div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="host"></div>
+                                <div class="zoom">
+                                </div>
+                                <div class="toDo"></div>
+                                <button class="delete"></button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                        <div data-modal-target="#modal-7L" class="lenora time-card">
+                            <div class="time">
+                                <span>7:00-8:00AM</span>
+                            </div>
+                        </div>
+                        <div data-modal-target="#modal-7L" class="content"></div>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
-</body>
 
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function funcOne() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
 </html>

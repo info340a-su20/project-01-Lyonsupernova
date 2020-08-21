@@ -419,5 +419,7 @@ span {
 }
 
 @media screen and (max-width: 700px) {
-
+  .calendar-item {
+    
+  }
 }
