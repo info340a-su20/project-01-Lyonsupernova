@@ -129,9 +129,9 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   border-radius: 10px;
   z-index: 10;
   background-color: white;
-  width: 50%;
-  height: 50%;
-  max-width: 80%;
+  width: 40%;
+  height: 40%;
+  max-width: 75%;
   align-items: center;
 }
 
@@ -163,7 +163,10 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   font-weight: bold;
 }
 .modal-body {
-  padding: 10px 15px;
+  padding: 50px 70px;
+}
+.toDo {
+  margin-bottom: 20px;
 }
 .overlay {
   position: fixed;
