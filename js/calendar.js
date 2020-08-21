@@ -45,14 +45,13 @@ let deleteButtons = document.querySelectorAll('.delete');
 deleteButtons.forEach(button => {
   button.addEventListener('click', () => {
     let rowElem = button.closest(".row");
-    let cardNestedElem = button.closest('.card');
+    let cardNestedElem = button.closest('.calendar-item');
     rowElem.removeChild(cardNestedElem);
   })
 })
 
 
 // sort chronologically 
-
 // ths function is used for convert time from AM/PM to 24 hours conversison!
 // using ' ' space to split AM and PM
 // for example, 8:00 PM -> 20:00
@@ -71,8 +70,6 @@ const convertTime12to24 = (time12h) => {
 
   return `${hours}:${minutes}`;
 }
-
-
 
 
 // this function is used to sort time based on the shedule
@@ -119,7 +116,7 @@ submitButtons.forEach(element => {
 // insert
 function insert(event) {
   let rowElem = document.querySelector('#row-' + event.target.id.slice(-1));
-  let cardElem = document.querySelector('.card').cloneNode(true);
+  let cardElem = document.querySelector('.calendar-item').cloneNode(true);
   cardElem.id = "card-new";
   let modayBodyName = event.target.parentElement.id;
   let eventNameInput = document.querySelector('#' + modayBodyName + ' #event-name').value;
@@ -127,14 +124,15 @@ function insert(event) {
   let zoomLinkInput = document.querySelector('#' + modayBodyName + ' #zoom-link').value;
   let toDoListInput = document.querySelector('#' + modayBodyName + ' #to-do-list').value;
   let imgInput = document.querySelector('#' + modayBodyName + ' #source').value;
-  let dateInput = document.querySelector('#' + modayBodyName + ' #date').value;
+  let startTimeInput = document.querySelector('#' + modayBodyName + ' #start-time').value;
+  let endTimeInput = document.querySelector('#' + modayBodyName + ' #end-time').value;
   document.querySelector('#' + modayBodyName + ' #event-name').value = "";
   document.querySelector('#' + modayBodyName + ' #host-name').value = "";
   document.querySelector('#' + modayBodyName + ' #zoom-link').value = "";
   document.querySelector('#' + modayBodyName + ' #to-do-list').value = "";
   document.querySelector('#' + modayBodyName + ' #source').value = "";
-  document.querySelector('#' + modayBodyName + ' #date').value = "";
-
+  document.querySelector('#' + modayBodyName + ' #start-time').value = "";
+  document.querySelector('#' + modayBodyName + ' #end-time').value = "";
   // let addButton = document.querySelector('#' + rowElem.id + ' .add-button');
   rowElem.appendChild(cardElem);
   document.querySelector("#card-new .content").textContent = eventNameInput;
@@ -142,8 +140,14 @@ function insert(event) {
   document.querySelector("#card-new .host").textContent = "Host: " + hostNameInput;
   document.querySelector("#card-new .zoom").textContent = "Zoom Link: " + zoomLinkInput;
   document.querySelector("#card-new .toDo").textContent = "To do List: " + toDoListInput;
-  document.querySelector("#card-new .time").textContent = dateInput;
-
+  let firstTwo = startTimeInput.substr(0,2);
+  let ampm = firstTwo >= 12 ? "PM":"AM";
+  startTimeInput = firstTwo > 12? startTimeInput.replace(firstTwo, parseInt(firstTwo) - 12) : startTimeInput;
+  startTimeInput = firstTwo > 9? startTimeInput : startTimeInput.slice(1); // 09:30 => 9:30 
+  firstTwo = endTimeInput.substr(0,2); // 10:30 ==> 10
+  endTimeInput = firstTwo > 12? endTimeInput.replace(firstTwo, parseInt(firstTwo) - 12) : endTimeInput;
+  endTimeInput = firstTwo > 9? endTimeInput : endTimeInput.slice(1);
+  document.querySelector("#card-new .time span").textContent = startTimeInput + '-' + endTimeInput + ampm;
   let modalName = 'modal-' + eventNameInput.replace(/\s+/g, '-').toLowerCase();
   document.querySelector("#card-new .modal").id = modalName;
   document.querySelector('#card-new .time-card').removeAttribute('data-modal-target')
@@ -174,7 +178,7 @@ function insert(event) {
   deleteButtons.forEach(button => {
     button.addEventListener('click', () => {
       let rowElem = button.closest(".row");
-      let cardNestedElem = button.closest('.card');
+      let cardNestedElem = button.closest('.calendar-item');
       rowElem.removeChild(cardNestedElem);
     })
   })
@@ -203,18 +207,19 @@ futureTimeElem.textContent = monthNames[today.getMonth()] + ' ' + today.getDate(
 
 // AJAX Request 
 
+
+// 11 cards, json.data == 9 cards 
 const modalFlags = [
   "modal-tim", 
   "modal-cse351",
   "modal-info340-tomorrow",
-  "modal-lyons-today",
   "modal-math381",
   "modal-info340-future",
   "modal-sam",
   "modal-marc",
   "modal-dog",
   "modal-7L",
-  "modal-lyons-future"
+  
 ]
 
 let index = 0;
@@ -233,7 +238,6 @@ function renderCard(modal, i){
   let hostElem  = document.querySelector(modalID + ' .host');
   let zoomElem  = document.querySelector(modalID + ' .zoom');
   let toDoElem  = document.querySelector(modalID + ' .toDo');
-  let timeElem  = document.querySelector(modalID).nextElementSibling.nextElementSibling;
   let textElem  = document.querySelector(modalID).nextElementSibling.nextElementSibling.nextElementSibling;
   titleElem.textContent = modal.EventName;
   hostElem.innerHTML = "<strong>Host: </strong>" + modal.HostName;
