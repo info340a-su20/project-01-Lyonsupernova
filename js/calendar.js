@@ -177,7 +177,7 @@ function insert(event) {
   deleteButtons = document.querySelectorAll('.delete');
   deleteButtons.forEach(button => {
     button.addEventListener('click', () => {
-      let rowElem = button.closest(".row");
+      let rowElem = button.closest(".row-main");
       let cardNestedElem = button.closest('.calendar-item');
       rowElem.removeChild(cardNestedElem);
     })

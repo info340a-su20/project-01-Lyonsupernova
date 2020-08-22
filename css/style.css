@@ -206,7 +206,7 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   margin-bottom: 20px;
 }
 .overlay {
-  position: absolute;
+  position: fixed;
   opacity: 0;
   transition: 200ms ease-in-out;
   top: 0;
