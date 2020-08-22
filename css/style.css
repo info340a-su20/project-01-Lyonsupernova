@@ -17,6 +17,7 @@
   padding: 10px 0;
   display: flex;
   align-items: center;
+  overflow-x: scroll;
 }
 
 
@@ -138,29 +139,33 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 .modal {
   position: fixed;
   top: 50%;
-  left: 60%;
+  left: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
   border: 1px solid black;
   border-radius: 10px;
   z-index: 10;
   background-color: white;
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 50%;
   max-width: 75%;
-  align-items: center;
+  align-content: center;
 }
-
 .modal-content{
   /* display: flex;
   flex-direction: column; */
   align-items: center;
+}
+.modal-body {
+  align-items: center;
+  margin: 3rem 20px;
 }
 
 .modal.active {
   transform: translate(-50%, -50%) scale(1);
 }
 .modal-header {
+  margin-top: 25px;
   padding: 10px 15px;
   display: flex;
   justify-content: space-evenly;
@@ -178,8 +183,18 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   background: none;
   font-size: 1.25rem;
   font-weight: bold;
-
 }
+@media screen and (max-width: 600px) {
+  .modal {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    max-width: 80%;
+    align-items: center;
+    overflow: hidden;
+  }
+}
+
 .email-a {
   color: black;
   background-color: none;
@@ -191,7 +206,7 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   margin-bottom: 20px;
 }
 .overlay {
-  position: fixed;
+  position: absolute;
   opacity: 0;
   transition: 200ms ease-in-out;
   top: 0;
@@ -205,16 +220,7 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   opacity: 1;
   pointer-events: all;
 }
-@media screen and (max-width: 600px) {
-  .modal {
-    background-color: white;
-    width: 80%;
-    height: 80%;
-    max-width: 80%;
-    align-items: center;
-    overflow: hidden;
-  }
-}
+
 
 /* Main content */
 .centered {
