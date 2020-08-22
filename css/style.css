@@ -19,6 +19,7 @@
   align-items: center;
 }
 
+
 @media only screen and (max-width: 450px) {
   .row {
     overflow-x: none;
@@ -117,7 +118,7 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   text-align: center;
   width: 80%;
   height: 80%;
-  position: fixed;
+  position: relative;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -132,15 +133,15 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   border-radius: 10px;
   z-index: 10;
   background-color: white;
-  width: 40%;
-  height: 40%;
+  width: 60%;
+  height: 60%;
   max-width: 75%;
   align-items: center;
 }
 
 .modal-content{
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   align-items: center;
 }
 
@@ -165,7 +166,13 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   font-size: 1.25rem;
   font-weight: bold;
 }
-
+.email-a {
+  color: black;
+  background-color: none;
+  text-decoration: none;
+  margin: 2px 2px;
+  padding: 2px 2px;
+}
 .toDo {
   margin-bottom: 20px;
 }
@@ -256,6 +263,7 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   margin-bottom: 0.5rem;
   border-bottom: 1px solid rgb(102, 62, 62);
 }
+
 /* Responsive */
 @media screen and (max-width: 450px) {
   .container {
