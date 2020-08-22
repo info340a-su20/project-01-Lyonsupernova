@@ -105,35 +105,47 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
  /* profile image */
 #profile-image {
-  width: 70px;
-  height: 70px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-right: 500%;
 }
+
 
 #profile-title, #contact-title{
   font-size: 28px;
+  text-align: center;
+  margin-right: 500%;
+
 }
 
 .profile-body{
   text-align: center;
-  width: 80%;
-  height: 80%;
+  width: 50%;
+  height: 50%;
   position: fixed;
   font-family: 'Roboto', sans-serif;
+  padding: 10px 0px;
+  color: #5A5A5A;
+  line-height: 1.2;
+  font-style: initial;
+  float: right;
+  
 }
 
 /* Modal */
 .modal {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
   border: 1px solid black;
   border-radius: 10px;
   z-index: 10;
   background-color: white;
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 60%;
   max-width: 75%;
   align-items: center;
 }
@@ -157,6 +169,7 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 .modal-header .title {
   font-size: 1.25rem;
   font-weight: bold;
+  text-align: cneter;
 }
 .modal-header{
   border: none;
@@ -164,6 +177,7 @@ https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
   background: none;
   font-size: 1.25rem;
   font-weight: bold;
+
 }
 
 .toDo {
